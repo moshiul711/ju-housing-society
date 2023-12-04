@@ -10,4 +10,9 @@ class FrontController extends Controller
     {
         return view('front.home.index');
     }
+
+    public function contact()
+    {
+        return view('front.home.contact');
+    }
 }
