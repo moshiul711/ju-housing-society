@@ -25,6 +25,8 @@
     <script src="{{ asset('/') }}front/js/vendor/html5shiv.min.js"></script>
     <script src="{{ asset('/') }}front/js/vendor/respond.min.js"></script>
     <script src="{{ asset('/') }}front/js/vendor/jquery-1.12.4.min.js"></script>
+
+
     <![endif]-->
 </head>
 
@@ -116,9 +118,17 @@
                                             <button class="btn-warning">Login</button>
                                         </a>
                                         @else
-                                        <a href="{{ route('teacher.logout') }}">
-                                            <button class="btn-warning">LogOut</button>
+                                        <a href="">
+                                            <button class="btn-warning">{{ Session::get('teacher_name') }}</button>
                                         </a>
+                                            <ul>
+                                                <!-- Gallery regular -->
+                                                <li> <a href="{{ route('teacher.dashboard') }}">Dashboard</a></li>
+                                                <!-- eof Gallery regular -->
+                                                <!-- Gallery full width -->
+                                                <li> <a href="{{ route('teacher.logout') }}">Logout</a></li>
+                                                <!-- eof Gallery full width -->
+                                            </ul>
                                         @endif
                                     </li>
                                     <!-- eof Payment -->
@@ -197,6 +207,17 @@
 </script><script src="{{ asset('/') }}front/js/compressed.js"></script>
 <script src="{{ asset('/') }}front/js/selectize.min.js"></script>
 <script src="{{ asset('/') }}front/js/main.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+
+
+
+</script>
 {{--<script src="{{ asset('/') }}front/js/switcher.js"></script>--}}
 </body>
 

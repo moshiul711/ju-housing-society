@@ -20,6 +20,18 @@ class TeacherController extends Controller
         return view('teacher.dashboard',['teacher'=>$this->teacher]);
     }
 
+    public function profile()
+    {
+        $this->teacher = Teacher::find(Session::get('teacher_id'));
+        return view('teacher.profile',['teacher'=>$this->teacher]);
+    }
+
+    public function profileUpdate(Request $request,$id,$name)
+    {
+        $this->teacher = Teacher::teacherProfileUpdate($request,$id,$name);
+        return back()->with('message', 'Your Profile has been Updated');
+    }
+
     public function login(Request $request)
     {
         $this->teacher = Teacher::teacherLogin($request);
@@ -28,6 +40,7 @@ class TeacherController extends Controller
             if (password_verify($request->password,$this->teacher->password))
             {
                 Session::put('teacher_id',$this->teacher->id);
+                Session::put('teacher_name',$this->teacher->name);
                 return redirect('/teacher-dashboard');
             }
             else

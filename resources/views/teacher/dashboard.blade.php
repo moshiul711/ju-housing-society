@@ -4,26 +4,26 @@
 <section class="section_padding_top_50 section_padding_bottom_50 columns_padding_25">
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 with_border">
                 <div class="widget widget_recent_posts">
                     <ul class="list-unstyled greylinks">
                         <li class="media"> <i class="fa fa-dashboard highlight rightpadding_5" aria-hidden="true"></i>
-                            <a href="" style="color: black;">Dashboard</a>
+                            <a href="{{ route('teacher.dashboard') }}" style="color: black;">Dashboard</a>
                         </li>
 
-                        <li class="media"> <i class="fa fa-dashboard highlight rightpadding_5" aria-hidden="true"></i>
-                            <a href="" style="color: black;">Profile</a>
+                        <li class="media"> <i class="fa fa-user highlight rightpadding_5" aria-hidden="true"></i>
+                            <a href="{{ route('teacher.profile') }}" style="color: black;">Profile</a>
                         </li>
 
-                        <li class="media"> <i class="fa fa-dashboard highlight rightpadding_5" aria-hidden="true"></i>
+                        <li class="media"> <i class="fa fa-paypal highlight rightpadding_5" aria-hidden="true"></i>
                             <a href="" style="color: black;">Payment History</a>
                         </li>
 
-                        <li class="media"> <i class="fa fa-dashboard highlight rightpadding_5" aria-hidden="true"></i>
+                        <li class="media"> <i class="fa fa-group highlight rightpadding_5" aria-hidden="true"></i>
                             <a href="" style="color: black;">User Lists</a>
                         </li>
 
-                        <li class="media"> <i class="fa fa-dashboard highlight rightpadding_5" aria-hidden="true"></i>
+                        <li class="media"> <i class="fa fa-newspaper-o highlight rightpadding_5" aria-hidden="true"></i>
                             <a href="" style="color: black;">News / Events</a>
                         </li>
 

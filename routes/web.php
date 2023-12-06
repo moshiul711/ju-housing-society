@@ -22,3 +22,5 @@ Route::get('/teacher-logout',[TeacherController::class,'logout'])->name('teacher
 Route::get('/payment',[TeacherController::class,'payment'])->name('payment')->middleware('TeacherMiddleware');
 
 Route::get('/teacher-dashboard',[TeacherController::class,'dashboard'])->name('teacher.dashboard');
+Route::get('/teacher-profile',[TeacherController::class,'profile'])->name('teacher.profile');
+Route::post('/teacher-profile/update/{id}/{name}',[TeacherController::class,'profileUpdate'])->name('teacher.profile.update');
