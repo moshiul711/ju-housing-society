@@ -16,6 +16,9 @@ use App\Http\Controllers\TeacherController;
 
 Route::get('/',[FrontController::class,'index'])->name('home');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
-Route::get('/user-login',[TeacherController::class,'index'])->name('user.login');
-Route::post('/user-login',[TeacherController::class,'login'])->name('user.login');
-Route::get('/payment',[TeacherController::class,'payment'])->name('payment')->middleware('userMiddleware');
+Route::get('/teacher-login',[TeacherController::class,'index'])->name('teacher.login');
+Route::post('/teacher-login',[TeacherController::class,'login'])->name('teacher.login');
+Route::get('/teacher-logout',[TeacherController::class,'logout'])->name('teacher.logout');
+Route::get('/payment',[TeacherController::class,'payment'])->name('payment')->middleware('TeacherMiddleware');
+
+Route::get('/teacher-dashboard',[TeacherController::class,'dashboard'])->name('teacher.dashboard');

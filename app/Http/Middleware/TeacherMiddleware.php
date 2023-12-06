@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Session;
 
-class UserMiddleware
+class TeacherMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Session::get('user_id'))
+        if (!Session::get('teacher_id'))
         {
-            return redirect('/user-login');
+            return redirect('/teacher-login');
         }
         return $next($request);
     }

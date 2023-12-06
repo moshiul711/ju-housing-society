@@ -111,9 +111,15 @@
 
                                     <!-- Payment -->
                                     <li>
-                                        <a href="{{ route('payment') }}">
-                                            <button class="btn-warning">Payment</button>
+                                        @if(!Session::get('teacher_id'))
+                                        <a href="{{ route('teacher.login') }}">
+                                            <button class="btn-warning">Login</button>
                                         </a>
+                                        @else
+                                        <a href="{{ route('teacher.logout') }}">
+                                            <button class="btn-warning">LogOut</button>
+                                        </a>
+                                        @endif
                                     </li>
                                     <!-- eof Payment -->
 

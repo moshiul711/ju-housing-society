@@ -11,6 +11,7 @@ class Teacher extends Model
     private static $teacher;
     public static function teacherLogin($request)
     {
-        self::$teacher = Teacher::where(['phone'=>$request->phone,'password'=>bcrypt($request->password))->first
+        self::$teacher = Teacher::where('phone',$request->email_phone)->orWhere('email',$request->email_phone)->first();
+        return self::$teacher;
     }
 }

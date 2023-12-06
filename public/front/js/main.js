@@ -562,7 +562,7 @@ function windowLoadInit() {
 	jQuery('.signup').on('submit', function( e ) {
 		e.preventDefault();
 		var $form = jQuery(this);
-		// update user interface
+		// update teacher interface
 		$form.find('.response').html('Adding email address...');
 		// Prepare query string and send AJAX request
 		jQuery.ajax({
