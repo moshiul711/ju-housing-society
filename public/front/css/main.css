@@ -1834,7 +1834,7 @@ ul, ol {
 }
 
 .list-unstyled .media:last-child {
-    margin-bottom: 0
+    margin-bottom: 5px
 }
 
 .list-unstyled li:last-child > .media {

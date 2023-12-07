@@ -22,15 +22,15 @@
     <link rel="stylesheet" href="{{ asset('/') }}front/css/shop.css" class="color-switcher-link">
     <script src="{{ asset('/') }}front/js/vendor/modernizr-2.6.2.min.js"></script>
 
+
     <!--[if lt IE 9]>
     <script src="{{ asset('/') }}front/js/vendor/html5shiv.min.js"></script>
     <script src="{{ asset('/') }}front/js/vendor/respond.min.js"></script>
-    <script src="{{ asset('/') }}front/js/vendor/jquery-1.12.4.min.js"></script>
 
 
     <![endif]-->
 
-    {{--<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />--}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
 
 
 </head>
@@ -207,6 +207,9 @@
     <!-- eof #box_wrapper -->
 </div>
 <!-- eof #canvas -->
+
+
+{{--<script src="{{ asset('/') }}front/js/vendor/jquery-1.12.4.min.js"></script>--}}
 <script data-cfasync="false" src="{{ asset('/') }}front/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
 
 </script><script src="{{ asset('/') }}front/js/compressed.js"></script>
@@ -216,7 +219,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {{--<script src="https://code.jquery.com/jquery-3.7.0.js"></script>--}}
-{{--<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>--}}
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();

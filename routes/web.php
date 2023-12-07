@@ -16,11 +16,17 @@ use App\Http\Controllers\TeacherController;
 
 Route::get('/',[FrontController::class,'index'])->name('home');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
+Route::get('/about',[FrontController::class,'about'])->name('about');
+
+
+
+
 Route::get('/teacher-login',[TeacherController::class,'index'])->name('teacher.login');
 Route::post('/teacher-login',[TeacherController::class,'login'])->name('teacher.login');
 Route::get('/teacher-logout',[TeacherController::class,'logout'])->name('teacher.logout');
-Route::get('/payment',[TeacherController::class,'payment'])->name('payment')->middleware('TeacherMiddleware');
 
 Route::get('/teacher-dashboard',[TeacherController::class,'dashboard'])->name('teacher.dashboard');
 Route::get('/teacher-profile',[TeacherController::class,'profile'])->name('teacher.profile');
 Route::post('/teacher-profile/update/{id}/{name}',[TeacherController::class,'profileUpdate'])->name('teacher.profile.update');
+Route::get('/teacher-payment',[TeacherController::class,'payment'])->name('teacher.payment');
+Route::get('/teachers',[TeacherController::class,'allTeacher'])->name('teachers');

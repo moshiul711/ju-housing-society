@@ -32,6 +32,22 @@ class TeacherController extends Controller
         return back()->with('message', 'Your Profile has been Updated');
     }
 
+    public function payment()
+    {
+        $this->teacher = Teacher::find(Session::get('teacher_id'));
+        return view('teacher.payment',['teacher'=>$this->teacher]);
+    }
+
+    public function allTeacher()
+    {
+        return view('teacher.lists');
+    }
+
+
+
+
+
+
     public function login(Request $request)
     {
         $this->teacher = Teacher::teacherLogin($request);

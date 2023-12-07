@@ -16,15 +16,11 @@
                             </li>
 
                             <li class="media"> <i class="fa fa-paypal highlight rightpadding_5" aria-hidden="true"></i>
-                                <a href="" style="color: black;">Payment History</a>
+                                <a href="{{ route('teacher.payment') }}" style="color: black;">Payment History</a>
                             </li>
 
-                            <li class="media"> <i class="fa fa-group highlight rightpadding_5" aria-hidden="true"></i>
-                                <a href="" style="color: black;">User Lists</a>
-                            </li>
-
-                            <li class="media"> <i class="fa fa-newspaper-o highlight rightpadding_5" aria-hidden="true"></i>
-                                <a href="" style="color: black;">News / Events</a>
+                            <li class="media "> <i class="fa fa-group highlight rightpadding_5" aria-hidden="true"></i>
+                                <a href="{{ route('teachers') }}" class="section_padding_bottom_5" style="color: black;">Member Lists</a>
                             </li>
 
                             {{--<li class="media"> <i class="fa fa-phone highlight rightpadding_5" aria-hidden="true"></i> 8 (800) 923 4567 (operator) </li>--}}
