@@ -63,8 +63,8 @@
                         <div class="header_left_logo display_table_cell"> <a href="{{ route('home') }}" class="logo logo_with_text">
                                 <img src="{{ asset('/') }}front/images/logo.png" alt="">
                                 <span class="logo_text">
-                            Diversify
-                            <small class="highlight4" style="color: yellow">Jahangirnagar Co-Operative Housing Society</small>
+                            Jahangirnagar
+                            <small class="highlight4" style="color: yellow"> Co-Operative Housing Society</small>
                         </span>
                             </a> </div>
                         <div class="header_mainmenu display_table_cell text-center">
@@ -74,7 +74,7 @@
                                     <li class="active"> <a href="{{ route('home') }}">Home</a></li>
                                     <li> <a href="about.html">About</a></li>
                                     <!-- eof pages -->
-                                    <li> <a href="#">Community Services</a>
+                                    <li> <a href="#">Services</a>
                                         <ul>
                                             <li> <a href="services.html">Services</a> </li>
                                             <li> <a href="service-single.html">Single Service</a> </li>
@@ -82,31 +82,43 @@
                                     </li>
 
                                     <!-- gallery -->
-                                    <li> <a href="gallery-regular.html">Gallery</a>
+                                    <li> <a href="#">Gallery</a>
                                         <ul>
                                             <!-- Gallery regular -->
-                                            <li> <a href="gallery-regular.html">Photos</a></li>
+                                            <li> <a href="{{ route('photo') }}">Photos</a></li>
                                             <!-- eof Gallery regular -->
                                             <!-- Gallery full width -->
-                                            <li> <a href="gallery-fullwidth.html">Videos</a></li>
+                                            <li> <a href="#">Videos</a></li>
                                             <!-- eof Gallery full width -->
                                         </ul>
                                     </li>
                                     <!-- eof Gallery -->
 
                                     <!-- Forms -->
-                                    <li> <a href="blog-right.html">Forms</a></li>
+                                    <li> <a href="{{ route('forms') }}">Forms</a></li>
                                     <!-- eof Forms -->
 
                                     <!-- Notice/News -->
                                     <li>
-                                        <a href="blog-right.html">Notice</a>
+                                        <a href="#">Notice</a>
                                         <ul>
                                             <!-- Gallery regular -->
-                                            <li> <a href="gallery-regular.html">News</a></li>
+                                            <li> <a href="">News</a></li>
                                             <!-- eof Gallery regular -->
                                             <!-- Gallery full width -->
                                             <li> <a href="gallery-fullwidth.html">Events</a></li>
+                                            <!-- eof Gallery full width -->
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Members</a>
+                                        <ul>
+                                            <!-- Gallery regular -->
+                                            <li> <a href="">Executives</a></li>
+                                            <!-- eof Gallery regular -->
+                                            <!-- Gallery full width -->
+                                            <li> <a href="gallery-fullwidth.html">Staffs</a></li>
                                             <!-- eof Gallery full width -->
                                         </ul>
                                     </li>
@@ -120,7 +132,7 @@
                                     <li>
                                         @if(!Session::get('teacher_id'))
                                         <a href="{{ route('teacher.login') }}">
-                                            <button class="btn-warning">Login</button>
+                                            <button class="btn-warning">Member Login</button>
                                         </a>
                                         @else
                                         <a href="">
@@ -214,7 +226,7 @@
 <script src="{{ asset('/') }}front/js/main.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>--}}
 {{--<script src="https://code.jquery.com/jquery-3.7.0.js"></script>--}}
 {{--<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>--}}
 <script>

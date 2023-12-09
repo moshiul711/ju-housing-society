@@ -21,4 +21,14 @@ class FrontController extends Controller
         return view('front.home.about');
     }
 
+    public function photo()
+    {
+        return view('front.home.photo');
+    }
+
+    public function forms()
+    {
+        return view('front.home.forms');
+    }
+
 }

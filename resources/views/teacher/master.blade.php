@@ -26,7 +26,7 @@
     <!--[if lt IE 9]>
     <script src="{{ asset('/') }}front/js/vendor/html5shiv.min.js"></script>
     <script src="{{ asset('/') }}front/js/vendor/respond.min.js"></script>
-
+    <script src="{{ asset('/') }}front/js/vendor/jquery-1.12.4.min.js"></script>
 
     <![endif]-->
 
@@ -217,9 +217,9 @@
 <script src="{{ asset('/') }}front/js/main.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>--}}
 {{--<script src="https://code.jquery.com/jquery-3.7.0.js"></script>--}}
-<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+{{--<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>--}}
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();

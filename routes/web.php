@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,8 @@ use App\Http\Controllers\TeacherController;
 Route::get('/',[FrontController::class,'index'])->name('home');
 Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 Route::get('/about',[FrontController::class,'about'])->name('about');
+Route::get('/photo',[FrontController::class,'photo'])->name('photo');
+Route::get('/forms',[FrontController::class,'forms'])->name('forms');
 
 
 
@@ -30,3 +33,8 @@ Route::get('/teacher-profile',[TeacherController::class,'profile'])->name('teach
 Route::post('/teacher-profile/update/{id}/{name}',[TeacherController::class,'profileUpdate'])->name('teacher.profile.update');
 Route::get('/teacher-payment',[TeacherController::class,'payment'])->name('teacher.payment');
 Route::get('/teachers',[TeacherController::class,'allTeacher'])->name('teachers');
+
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
+    Route::get('/dashboard', [AdminController::class,'index'])->name('dashboard');
+});
