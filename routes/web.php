@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,4 +38,21 @@ Route::get('/teachers',[TeacherController::class,'allTeacher'])->name('teachers'
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', [AdminController::class,'index'])->name('dashboard');
+
+    Route::get('/invoice-create',[AdminController::class,'createInvoice'])->name('invoice.create');
+    Route::post('/invoice-store',[AdminController::class,'storeInvoice'])->name('invoice.store');
+
+    Route::get('/bill.details',[AdminController::class,'billDetails'])->name('bill.details');
+    Route::get('/bill.edit/{id}',[AdminController::class,'billEdit'])->name('bill.edit');
+    Route::post('/bill.update/{id}',[AdminController::class,'billupdate'])->name('bill.update');
+
+    Route::get('/service-details/create',[AdminController::class,'createService'])->name('service.details.create');
+    Route::post('/service-details/store',[AdminController::class,'storeService'])->name('service.details.store');
+    Route::get('/service-details/manage',[AdminController::class,'manageService'])->name('service.details.manage');
+    Route::get('/service-details/edit/{id}',[AdminController::class,'editService'])->name('service.details.edit');
+    Route::post('/service-details/update/{id}',[AdminController::class,'updateService'])->name('service.details.update');
+
+
+
+    Route::get('/getServiceDetailsByYear',[AdminController::class,'getServiceDetailsByYear'])->name('getServiceDetailsByYear');
 });

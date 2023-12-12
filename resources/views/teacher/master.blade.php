@@ -63,8 +63,8 @@
                         <div class="header_left_logo display_table_cell"> <a href="{{ route('home') }}" class="logo logo_with_text">
                                 <img src="{{ asset('/') }}front/images/logo.png" alt="">
                                 <span class="logo_text">
-                            Diversify
-                            <small class="highlight4" style="color: yellow">Jahangirnagar Co-Operative Housing Society</small>
+                            Jahangirnagar
+                            <small class="highlight4" style="color: yellow"> Co-Operative Housing Society</small>
                         </span>
                             </a> </div>
                         <div class="header_mainmenu display_table_cell text-center">
