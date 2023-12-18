@@ -9,7 +9,7 @@ class ServiceDetail extends Model
 {
     use HasFactory;
 
-    public static $service;
+    public static $service, $payments;
 
     public static function storeServiceDetails($request)
     {
@@ -49,7 +49,19 @@ class ServiceDetail extends Model
         self::$service->late_fees = $request->late_fees;
         self::$service->service = $request->service;
         self::$service->others = $request->others;
+        self::$service->total_charge = $request->service+$request->late_fees+$request->employee_welfare+$request->garbage+$request->plot_transfer+$request->membership+$request->share_certificate+$request->land_value+$request->development+$request->electric_line+$request->savings_deposit+$request->administration+$request->others;
         self::$service->save();
         return self::$service;
+    }
+
+    public static function updatePaymentStatus($id)
+    {
+        self::$service = ServiceDetail::find($id);
+        self::$payments = TeacherPaymentStatus::where(['service_detail_id'=>$id, 'payment_status'=>'Due'])->get();
+        foreach (self::$payments as $payment)
+        {
+            $payment->total_charge = self::$service->total_charge;
+            $payment->save();
+        }
     }
 }

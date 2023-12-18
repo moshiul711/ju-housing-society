@@ -9,6 +9,16 @@ class Teacher extends Model
 {
     use HasFactory;
     private static $teacher,$directory, $image, $imageName, $imageUrl;
+
+    public static function teacherCreate($request)
+    {
+        self::$teacher = new Teacher();
+        self::$teacher->name = $request->name;
+        self::$teacher->member_no = $request->member_no;
+        self::$teacher->plot_no = $request->plot_no;
+        self::$teacher->save();
+    }
+
     public static function teacherLogin($request)
     {
         self::$teacher = Teacher::where('phone',$request->email_phone)->orWhere('email',$request->email_phone)->first();

@@ -18,10 +18,9 @@ return new class extends Migration
             $table->string('member_no')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('role')->default('Member');
             $table->longText('about')->nullable();
             $table->string('address')->nullable();
-            $table->string('password')->nullable();
+            $table->string('password')->default(bcrypt('1234'));
             $table->string('image')->nullable();
             $table->timestamps();
         });

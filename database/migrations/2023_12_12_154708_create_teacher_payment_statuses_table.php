@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer('service_detail_id');
             $table->integer('teacher_id');
+            $table->integer('total_charge')->nullable();
+            $table->integer('paid_amount')->nullable();
+            $table->integer('due_amount')->nullable();
             $table->string('payment_status')->default('Due');
             $table->timestamps();
         });

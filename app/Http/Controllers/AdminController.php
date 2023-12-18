@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Schema;
 
 class AdminController extends Controller
 {
-    public $teachers,$service_details,$service_detail, $payment_status,$service_bills,$service_bill;
+    public $teachers,$service_details,$service_detail, $payment_status,$service_bills,$service_bill,$payments;
     public function index()
     {
         return view('admin.dashboard');
@@ -48,7 +48,9 @@ class AdminController extends Controller
 
     public function updateService(Request $request,$id)
     {
-        ServiceDetail::updateServiceDetails($request,$id);
+        $this->service_detail = ServiceDetail::updateServiceDetails($request,$id);
+        $this->payments = TeacherPaymentStatus::updatePaymentStatus($this->service_detail->id);
+
         return redirect('/service-details/manage')->with('message','Service Details update Successfully');
     }
 
@@ -62,30 +64,43 @@ class AdminController extends Controller
         $this->service_bills = DB::table('teacher_payment_statuses')
             ->join('service_details', 'service_details.id', '=', 'teacher_payment_statuses.service_detail_id')
             ->join('teachers', 'teachers.id', '=', 'teacher_payment_statuses.teacher_id')
-            ->select('teacher_payment_statuses.*', 'service_details.*', 'teachers.*')
+            ->select('teacher_payment_statuses.*','service_details.service_year', 'teachers.name','teachers.member_no','teachers.plot_no')
             ->get();
 //        $this->service_bills = Schema::getColumnListing('service_details');
         return view('admin.service_bill.index',['service_bills'=>$this->service_bills]);
     }
     public function billEdit($id)
     {
-        $this->service_bill = TeacherPaymentStatus::find($id)->first();
+        $this->service_bill = TeacherPaymentStatus::find($id);
         return view('admin.service_bill.edit',['bill'=>$this->service_bill]);
     }
-
-
-    public function createInvoice()
+    public function billupdate(Request $request,$id)
     {
-        $this->teachers = Teacher::all();
-        $this->service_details = ServiceDetail::all();
-        return view('admin.payment_invoice.create',[
-            'teachers' => $this->teachers,
-            'service_details' => $this->service_details
-        ]);
+        TeacherPaymentStatus::updatePaymentStatus($request,$id);
+        return redirect('/bill.details')->with('message','Bill Status Updated Successfully');
     }
-    public function storeInvoice(Request $request)
+    public function billPrint($id)
     {
-        return $request;
+        $this->service_bills = DB::table('teacher_payment_statuses')
+            ->join('service_details', 'service_details.id', '=', 'teacher_payment_statuses.service_detail_id')
+            ->join('teachers', 'teachers.id', '=', 'teacher_payment_statuses.teacher_id')
+            ->select('teacher_payment_statuses.*', 'service_details.*', 'teachers.*')
+            ->where('teacher_payment_statuses.id',$id)
+            ->first();
+//        $this->service_bills = Schema::getColumnListing('service_details');
+    }
+
+
+
+    public function createMember()
+    {
+        return view('admin.member.create');
+    }
+
+    public function storeMember(Request $request)
+    {
+        Teacher::teacherCreate($request);
+        return back()->with('message','New Member Create Successfully');
     }
 
 

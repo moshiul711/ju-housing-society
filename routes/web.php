@@ -45,6 +45,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/bill.details',[AdminController::class,'billDetails'])->name('bill.details');
     Route::get('/bill.edit/{id}',[AdminController::class,'billEdit'])->name('bill.edit');
     Route::post('/bill.update/{id}',[AdminController::class,'billupdate'])->name('bill.update');
+    Route::get('/bill.print/{id}',[AdminController::class,'billPrint'])->name('bill.print');
 
     Route::get('/service-details/create',[AdminController::class,'createService'])->name('service.details.create');
     Route::post('/service-details/store',[AdminController::class,'storeService'])->name('service.details.store');
@@ -52,7 +53,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/service-details/edit/{id}',[AdminController::class,'editService'])->name('service.details.edit');
     Route::post('/service-details/update/{id}',[AdminController::class,'updateService'])->name('service.details.update');
 
-
+    Route::get('/member/create',[AdminController::class,'createMember'])->name('member.create');
+    Route::get('/member/index',[AdminController::class,'createIndex'])->name('member.index');
+    Route::post('/member/store',[AdminController::class,'storeMember'])->name('member.store');
 
     Route::get('/getServiceDetailsByYear',[AdminController::class,'getServiceDetailsByYear'])->name('getServiceDetailsByYear');
 });

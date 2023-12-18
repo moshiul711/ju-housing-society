@@ -21,31 +21,25 @@
                 <div class="container-login100">
                     <div class="wrap-login100 p-0">
                         <div class="card-body">
-                            <form action="{{ route('invoice.store') }}" method="post" class="login100-form validate-form">
+                            <form action="{{ route('member.store') }}" method="post" class="login100-form validate-form">
                                 @csrf
                                 <div class="wrap-input100 validate-input">
-                                    <label for="" class=""> Select Member No : </label>
-                                    <select name="teacher_id" class="form-control input100" id="">
-                                        <option value="">---Select Member No---</option>
-                                        @foreach($teachers as $teacher)
-                                            <option value="{{ $teacher->id }}">{{ $teacher->member_no }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="" class="">Member Name : </label>
+                                    <input type="text" class="form-control input100" name="name">
                                 </div>
 
                                 <div class="wrap-input100 validate-input">
-                                    <label for="" class=""> Select Service Year : </label>
-                                    <select name="service_detail_id" class="form-control input100" id="">
-                                        <option value="">---Select Service Year---</option>
-                                        @foreach($service_details as $service_detail)
-                                            <option value="{{ $service_detail->id }}">{{ $service_detail->service_year }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="" class="">Membership No : </label>
+                                    <input type="text" class="form-control input100" name="member_no">
+                                </div>
+                                <div class="wrap-input100 validate-input">
+                                    <label for="" class="">Plot No : </label>
+                                    <input type="text" class="form-control input100" name="plot_no">
                                 </div>
 
                                 <div class="container-login100-form-btn">
                                     <button type="submit" class="login100-form-btn btn-primary">
-                                        Assign Member
+                                        Add Member
                                     </button>
                                 </div>
 

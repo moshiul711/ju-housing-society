@@ -27,7 +27,9 @@
                                 <th>Member Name</th>
                                 <th>Member No</th>
                                 <th>Plot No</th>
-                                <th>Total Service Charge</th>
+                                <th>Charge</th>
+                                <th>Paid</th>
+                                <th>Due</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -41,16 +43,21 @@
                                     <td>{{ $bill->member_no }}</td>
                                     <td>{{ $bill->plot_no }}</td>
                                     <td>{{ $bill->total_charge }}</td>
+                                    <td>{{ $bill->paid_amount }}</td>
+                                    <td>{{ $bill->due_amount }}</td>
                                     <td>
                                         @if($bill->payment_status == 'Due')
-                                        <a class="btn btn-danger">DUE</a>
-                                            @else
+                                            <a class="btn btn-danger">DUE</a>
+                                        @else
                                             <a class="btn btn-success">Paid</a>
-                                            @endif
+                                        @endif
                                     </td>
                                     <td>
                                         <a href="{{ route('bill.edit',$bill->id) }}" class="btn btn-warning">
                                             <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a href="{{ route('bill.print',$bill->id) }}" class="btn btn-success">
+                                            <i class="fa fa-print"></i>
                                         </a>
                                     </td>
                                 </tr>
