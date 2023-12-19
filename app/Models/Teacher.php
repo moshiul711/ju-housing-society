@@ -19,6 +19,17 @@ class Teacher extends Model
         self::$teacher->save();
     }
 
+    public static function teacherUpdate($request,$id)
+    {
+        self::$teacher = Teacher::find($id);
+        self::$teacher->name = $request->name;
+        self::$teacher->email = $request->email;
+        self::$teacher->phone = $request->phone;
+        self::$teacher->member_no = $request->member_no;
+        self::$teacher->plot_no = $request->plot_no;
+        self::$teacher->save();
+    }
+
     public static function teacherLogin($request)
     {
         self::$teacher = Teacher::where('phone',$request->email_phone)->orWhere('email',$request->email_phone)->first();

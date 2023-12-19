@@ -4,12 +4,12 @@
     <div class="col-lg-12 col-md-12">
         <div class="page-header">
             <div>
-                <h1 class="page-title">Invoice</h1>
+                <h1 class="page-title">Membership</h1>
             </div>
             <div class="ms-auto pageheader-btn">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Invoice</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Create</li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Membership</li>
                 </ol>
             </div>
         </div>

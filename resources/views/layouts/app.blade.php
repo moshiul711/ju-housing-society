@@ -500,7 +500,7 @@
                                 title: "Good job!",
                                 text: "{{ Session('message') }}",
                                 icon: "success",
-                                timer: 4000
+                                timer: 3000
                             });
                         </script>
                     @endif

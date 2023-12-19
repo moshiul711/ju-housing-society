@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>A simple, clean, and responsive HTML invoice template</title>
+
+    <style>
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 17px;
+            line-height: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+            text-align: justify;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .invoice-box.rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .invoice-box.rtl table {
+            text-align: right;
+        }
+
+        .invoice-box.rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <h2>Jahangirnagar Co-Operative Housing Society Limited</h2>
+                            <p>Bhatpara, Post: BPATC, Savar, Dhaka-1343. Phone - 7743064</p>
+                            <br>
+                            Invoice No. {{ rand(1111,99999).'      ' }}       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Established : 07/03/1977, Reg. No - 55, (Amended Reg. No - 37)
+                            <hr>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+
+        <tr class="information">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td style="text-align: left">
+                            Membership No:
+                        </td>
+                        <td style="text-align: center">
+                            Plot No:
+                        </td>
+                        <td style="text-align: center">
+                            Member Name:
+                        </td>
+                        <td style="text-align: right">
+                            Date: {{ Date('d-m-Y') }}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr class="heading">
+            <td>Payment Medium</td>
+
+            <td>Total</td>
+        </tr>
+
+        <tr class="details">
+            <td>Check</td>
+
+            <td>1000</td>
+        </tr>
+
+        <tr class="heading">
+            <td>Service Name</td>
+
+            <td>Service Charge</td>
+        </tr>
+
+        <tr class="item">
+            <td>Membership Fee</td>
+            <td>{{ $bill->membership }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Share Certificate Fee</td>
+            <td>{{ $bill->share_certificate }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Land Value</td>
+            <td>{{ $bill->land_value }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Development Cost</td>
+            <td>{{ $bill->development }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Electric Line Fees</td>
+            <td>{{ $bill->electric_line }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Savings Deposit Fees</td>
+            <td>{{ $bill->savings_deposit }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Administration Fees</td>
+            <td>{{ $bill->administration }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Plot Transfer Fees </td>
+            <td>{{ $bill->plot_transfer }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Garbage Bill</td>
+            <td>{{ $bill->garbage }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Employee Welfare Trust </td>
+            <td>{{ $bill->employee_welfare }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Late Fees</td>
+            <td>{{ $bill->late_fees }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Service Charge</td>
+            <td>{{ $bill->service }}</td>
+        </tr>
+
+        <tr class="item">
+            <td>Others Bill</td>
+            <td>{{ $bill->others }}</td>
+        </tr>
+
+        <tr class="heading">
+            <td>Total:</td>
+
+            <td> {{ $bill->total_charge }}</td>
+        </tr>
+    </table>
+    <h2>hjhgjhgjh</h2>
+    <h2>hjhgjhgjh</h2>
+    <h2>hjhgjhgjh</h2>
+    <h2>hjhgjhgjh</h2>
+    <h2>hjhgjhgjh</h2>
+</div>
+</body>
+</html>

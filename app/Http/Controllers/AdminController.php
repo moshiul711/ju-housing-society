@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\Charge;
 use App\Models\ServiceDetail;
 use App\Models\Teacher;
 use App\Models\TeacherPaymentStatus;
@@ -11,7 +10,7 @@ use Illuminate\Support\Facades\Schema;
 
 class AdminController extends Controller
 {
-    public $teachers,$service_details,$service_detail, $payment_status,$service_bills,$service_bill,$payments;
+    public $teacher,$teachers,$service_details,$service_detail, $payment_status,$service_bills,$service_bill,$payments;
     public function index()
     {
         return view('admin.dashboard');
@@ -49,7 +48,7 @@ class AdminController extends Controller
     public function updateService(Request $request,$id)
     {
         $this->service_detail = ServiceDetail::updateServiceDetails($request,$id);
-        $this->payments = TeacherPaymentStatus::updatePaymentStatus($this->service_detail->id);
+        $this->payments = ServiceDetail::updatePaymentStatus($this->service_detail->id);
 
         return redirect('/service-details/manage')->with('message','Service Details update Successfully');
     }
@@ -77,7 +76,18 @@ class AdminController extends Controller
     public function billupdate(Request $request,$id)
     {
         TeacherPaymentStatus::updatePaymentStatus($request,$id);
-        return redirect('/bill.details')->with('message','Bill Status Updated Successfully');
+        return redirect('/bill/details')->with('message','Bill Status Updated Successfully');
+    }
+    public function billInvoice($id)
+    {
+        $this->service_bill = DB::table('teacher_payment_statuses')
+            ->join('service_details', 'service_details.id', '=', 'teacher_payment_statuses.service_detail_id')
+            ->join('teachers', 'teachers.id', '=', 'teacher_payment_statuses.teacher_id')
+            ->select('teacher_payment_statuses.*', 'service_details.*', 'teachers.*')
+            ->where('teacher_payment_statuses.id',$id)
+            ->first();
+//        $this->service_bills = Schema::getColumnListing('service_details');
+        return view('admin.service_bill.invoice',['bill'=>$this->service_bill]);
     }
     public function billPrint($id)
     {
@@ -103,6 +113,22 @@ class AdminController extends Controller
         return back()->with('message','New Member Create Successfully');
     }
 
+    public function createIndex()
+    {
+        $this->teachers = Teacher::all();
+        return view('admin.member.index',['teachers'=>$this->teachers]);
+    }
+
+    public function editMember($id)
+    {
+        $this->teacher = Teacher::find($id);
+        return view('admin.member.edit',['teacher'=>$this->teacher]);
+    }
+    public function updateMember(Request $request,$id)
+    {
+        Teacher::teacherUpdate($request,$id);
+        return redirect('/member/index')->with('message','Member Info Updated Successfully');
+    }
 
     public function getServiceDetailsByYear()
     {

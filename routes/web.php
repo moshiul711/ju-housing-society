@@ -42,10 +42,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/invoice-create',[AdminController::class,'createInvoice'])->name('invoice.create');
     Route::post('/invoice-store',[AdminController::class,'storeInvoice'])->name('invoice.store');
 
-    Route::get('/bill.details',[AdminController::class,'billDetails'])->name('bill.details');
-    Route::get('/bill.edit/{id}',[AdminController::class,'billEdit'])->name('bill.edit');
-    Route::post('/bill.update/{id}',[AdminController::class,'billupdate'])->name('bill.update');
-    Route::get('/bill.print/{id}',[AdminController::class,'billPrint'])->name('bill.print');
+    Route::get('/bill/details',[AdminController::class,'billDetails'])->name('bill.details');
+    Route::get('/bill/edit/{id}',[AdminController::class,'billEdit'])->name('bill.edit');
+    Route::post('/bill/update/{id}',[AdminController::class,'billupdate'])->name('bill.update');
+    Route::get('/bill/print/{id}',[AdminController::class,'billPrint'])->name('bill.print');
+    Route::get('/bill/invoice/{id}',[AdminController::class,'billInvoice'])->name('bill.invoice');
 
     Route::get('/service-details/create',[AdminController::class,'createService'])->name('service.details.create');
     Route::post('/service-details/store',[AdminController::class,'storeService'])->name('service.details.store');
@@ -55,7 +56,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::get('/member/create',[AdminController::class,'createMember'])->name('member.create');
     Route::get('/member/index',[AdminController::class,'createIndex'])->name('member.index');
+    Route::get('/member/edit/{id}',[AdminController::class,'editMember'])->name('member.edit');
     Route::post('/member/store',[AdminController::class,'storeMember'])->name('member.store');
+    Route::post('/member/update/{id}',[AdminController::class,'updateMember'])->name('member.update');
 
     Route::get('/getServiceDetailsByYear',[AdminController::class,'getServiceDetailsByYear'])->name('getServiceDetailsByYear');
 });

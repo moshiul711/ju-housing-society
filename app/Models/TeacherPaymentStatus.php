@@ -36,7 +36,7 @@ class TeacherPaymentStatus extends Model
 
     public function service()
     {
-        return $this->hasOne(ServiceDetail::class);
+        return $this->belongsTo(ServiceDetail::class);
     }
 
     public function teacher()

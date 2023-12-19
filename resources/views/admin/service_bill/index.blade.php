@@ -24,14 +24,15 @@
                             <tr>
                                 <th>##</th>
                                 <th>Service Year</th>
+                                <th>Status</th>
+                                <th>Action</th>
                                 <th>Member Name</th>
                                 <th>Member No</th>
                                 <th>Plot No</th>
                                 <th>Charge</th>
                                 <th>Paid</th>
                                 <th>Due</th>
-                                <th>Status</th>
-                                <th>Action</th>
+
                             </tr>
                             </thead>
                             <tbody>
@@ -39,12 +40,6 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $bill->service_year }}</td>
-                                    <td>{{ $bill->name }}</td>
-                                    <td>{{ $bill->member_no }}</td>
-                                    <td>{{ $bill->plot_no }}</td>
-                                    <td>{{ $bill->total_charge }}</td>
-                                    <td>{{ $bill->paid_amount }}</td>
-                                    <td>{{ $bill->due_amount }}</td>
                                     <td>
                                         @if($bill->payment_status == 'Due')
                                             <a class="btn btn-danger">DUE</a>
@@ -56,10 +51,19 @@
                                         <a href="{{ route('bill.edit',$bill->id) }}" class="btn btn-warning">
                                             <i class="fa fa-edit"></i>
                                         </a>
+                                        <a href="{{ route('bill.invoice',$bill->id) }}" class="btn btn-purple-gradient">
+                                            <i class="fa fa-book"></i>
+                                        </a>
                                         <a href="{{ route('bill.print',$bill->id) }}" class="btn btn-success">
                                             <i class="fa fa-print"></i>
                                         </a>
                                     </td>
+                                    <td>{{ $bill->name }}</td>
+                                    <td>{{ $bill->member_no }}</td>
+                                    <td>{{ $bill->plot_no }}</td>
+                                    <td>{{ $bill->total_charge }}</td>
+                                    <td>{{ $bill->paid_amount }}</td>
+                                    <td>{{ $bill->due_amount }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
