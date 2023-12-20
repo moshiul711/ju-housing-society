@@ -43,7 +43,7 @@
                             <tbody>
                             @foreach($service_details as $detail)
                             <tr>
-                                <td>{{ number_format($detail->total_charge) }}</td>
+                                <td>{{ number_format($detail->total) }}</td>
                                 <td>{{ $detail->service_year }}</td>
                                 <td>{{ $detail->membership }}</td>
                                 <td>{{ $detail->share_certificate }}</td>

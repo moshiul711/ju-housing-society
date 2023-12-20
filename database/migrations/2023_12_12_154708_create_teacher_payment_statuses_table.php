@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('paid_amount')->nullable();
             $table->integer('due_amount')->nullable();
             $table->string('payment_status')->default('Due');
+            $table->string('payment_medium')->default('Cash');
+            $table->string('payment_date')->nullable();
             $table->timestamps();
         });
     }

@@ -37,9 +37,21 @@
                                     <label for="" class=""> Total Charge : </label>
                                     <input type="text" id="total" value="{{ $bill->total_charge }}" class="form-control input100" readonly>
                                 </div>
+
                                 <div class="wrap-input100 validate-input">
                                     <label for="" class=""> Paid Amount : </label>
                                     <input type="number" id="paid" name="paid_amount" value="{{ $bill->paid_amount }}" placeholder="0" min="0" max="{{ $bill->total_charge }}" class="form-control input100">
+                                </div>
+
+                                <div class="wrap-input100 validate-input">
+                                    <label for="" class=""> Payment Medium  : </label>
+                                    <select name="payment_medium" class="form-control input100" id="" required>
+                                        <option value="">Select Payment Medium</option>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Cheque">Cheque</option>
+                                        <option value="Pay Order">Pay Order</option>
+                                        <option value="DD">DD</option>
+                                    </select>
                                 </div>
 
                                 <div class="wrap-input100 validate-input">
