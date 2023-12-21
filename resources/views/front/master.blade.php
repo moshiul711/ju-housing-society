@@ -56,11 +56,8 @@
                             <nav class="mainmenu_wrapper">
                                 <ul class="mainmenu nav sf-menu">
                                     <li class="active"> <a href="{{ route('home') }}">Home</a></li>
-                                    <li> <a href="about.html">About</a></li>
-                                    <!-- eof pages -->
-                                    <li> <a href="{{ route('services') }}">Services</a>
-                                    
-                                    </li>
+                                    <li> <a href="{{ route('about') }}">About</a></li>
+                                    <li> <a href="{{ route('services') }}">Services</a> </li>
 
                                     <li> <a href="#">Gallery</a>
                                         <ul>

@@ -63,7 +63,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::post('/member/update/{id}',[AdminController::class,'updateMember'])->name('member.update');
 
     Route::get('/service/create',[ServiceController::class,'createCommunityService'])->name('service.create');
+    Route::get('/service/manage',[ServiceController::class,'manageCommunityService'])->name('service.manage');
     Route::post('/service/store',[ServiceController::class,'storeCommunityService'])->name('service.store');
+    Route::get('/service/edit/{id}',[ServiceController::class,'editCommunityService'])->name('service.edit');
+    Route::post('/service/update/{id}',[ServiceController::class,'updateCommunityService'])->name('service.update');
+    Route::get('/service/delete/{id}',[ServiceController::class,'destroyCommunityService'])->name('service.delete');
+
+    Route::get('/',[ServiceController::class,''])->name('');
 
     Route::get('/category/create',[ServiceController::class,'createCategory'])->name('category.create');
     Route::post('/category/store',[ServiceController::class,'storeCategory'])->name('category.store');

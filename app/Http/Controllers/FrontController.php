@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
-    public $services;
+    public $services,$about;
     public function index()
     {
         return view('front.home.index');

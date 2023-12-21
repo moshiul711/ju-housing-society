@@ -22,8 +22,8 @@
                         <table class="table border text-nowrap text-md-nowrap table-hover" id="basic-datatable">
                             <thead>
                             <tr>
-                                <th>Total Charge</th>
                                 <th>Service Year</th>
+                                <th>Total Charge</th>
                                 <th>Membership Fees</th>
                                 <th>Share Certificate Fees</th>
                                 <th>Land Value</th>
@@ -43,8 +43,8 @@
                             <tbody>
                             @foreach($service_details as $detail)
                             <tr>
-                                <td>{{ number_format($detail->total) }}</td>
                                 <td>{{ $detail->service_year }}</td>
+                                <td>{{ number_format($detail->total) }}</td>
                                 <td>{{ $detail->membership }}</td>
                                 <td>{{ $detail->share_certificate }}</td>
                                 <td>{{ $detail->land_value }}</td>

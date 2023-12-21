@@ -16,4 +16,16 @@ class Service extends Model
         self::$service->description = request()->description;   
         self::$service->save();
     }
+    public static function serviceUpdate($request,$id)
+    {
+        self::$service = Service::find($id);
+        self::$service->name = request()->name;
+        self::$service->description = request()->description;   
+        self::$service->save();
+    }
+    public static function serviceDelete($id)
+    {
+        self::$service = Service::find($id);
+        self::$service->delete();
+    }
 }
