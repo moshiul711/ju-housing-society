@@ -5,6 +5,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,10 +70,16 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::post('/service/update/{id}',[ServiceController::class,'updateCommunityService'])->name('service.update');
     Route::get('/service/delete/{id}',[ServiceController::class,'destroyCommunityService'])->name('service.delete');
 
-    Route::get('/',[ServiceController::class,''])->name('');
+     Route::get('/about/create',[AboutController::class,'createAbout'])->name('about.create');
+     Route::post('/about/store',[AboutController::class,'storeAbout'])->name('about.store');
+
+
+    Route::get('/about/manage',[AboutController::class,'index'])->name('about.manage');
+    Route::get('/about/edit/{id}',[AboutController::class,'editAbout'])->name('about.edit');
+    Route::post('/about/update/{id}',[AboutController::class,'updateAbout'])->name('about.update');
 
     Route::get('/category/create',[ServiceController::class,'createCategory'])->name('category.create');
     Route::post('/category/store',[ServiceController::class,'storeCategory'])->name('category.store');
-
+    
     Route::get('/getServiceDetailsByYear',[AdminController::class,'getServiceDetailsByYear'])->name('getServiceDetailsByYear');
 });

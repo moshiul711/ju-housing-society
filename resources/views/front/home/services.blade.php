@@ -16,7 +16,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content top-color-border color2">
                         @foreach ($services as $service)
-                        <div class="tab-pane fade in active" id="tab{{ $service->id }}">
+                        <div class="tab-pane fade active" id="tab{{ $service->id }}">
                             {!! $service->description !!}
                         </div>
                         @endforeach
