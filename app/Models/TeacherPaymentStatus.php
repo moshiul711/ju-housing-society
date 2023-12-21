@@ -30,8 +30,10 @@ class TeacherPaymentStatus extends Model
         self::$payment_status = TeacherPaymentStatus::find($id);
         self::$payment_status->payment_status = $request->payment_status;
         self::$payment_status->paid_amount = $request->paid_amount;
+        self::$payment_status->late_amount = $request->late_amount;
         self::$payment_status->payment_medium = $request->payment_medium;
         self::$payment_status->payment_date = date('d-m-Y');
+        self::$payment_status->total_charge = self::$payment_status->total_charge + $request->late_amount;
         self::$payment_status->due_amount = self::$payment_status->total_charge - $request->paid_amount;
         self::$payment_status->save();
     }

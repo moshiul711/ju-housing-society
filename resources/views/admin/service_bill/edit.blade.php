@@ -44,13 +44,18 @@
                                 </div>
 
                                 <div class="wrap-input100 validate-input">
+                                    <label for="" class=""> Late Fees : </label>
+                                    <input type="number" id="paid" name="late_amount" placeholder="0" min="0" class="form-control input100">
+                                </div>
+
+                                <div class="wrap-input100 validate-input">
                                     <label for="" class=""> Payment Medium  : </label>
                                     <select name="payment_medium" class="form-control input100" id="" required>
                                         <option value="">Select Payment Medium</option>
-                                        <option value="Cash">Cash</option>
-                                        <option value="Cheque">Cheque</option>
-                                        <option value="Pay Order">Pay Order</option>
-                                        <option value="DD">DD</option>
+                                        <option {{ $bill->payment_medium == 'Cash' ? 'selected' :'' }} value="Cash">Cash</option>
+                                        <option {{ $bill->payment_medium == 'Cheque' ? 'selected' :'' }} value="Cheque">Cheque</option>
+                                        <option {{ $bill->payment_medium == 'Pay Order' ? 'selected' :'' }} value="Pay Order">Pay Order</option>
+                                        <option {{ $bill->payment_medium == 'DD' ? 'selected' :'' }} value="DD">DD</option>
                                     </select>
                                 </div>
 
@@ -58,8 +63,8 @@
                                     <label for="" class=""> Service Status  : </label>
                                     <select name="payment_status" class="form-control input100" id="" required>
                                         <option value="">Select Service Charge Status</option>
-                                        <option value="Paid">Paid</option>
-                                        <option value="Due">Due</option>
+                                        <option {{ $bill->payment_status == 'Paid' ? 'selected' :'' }} value="Paid">Paid</option>
+                                        <option {{ $bill->payment_status == 'Due' ? 'selected' :'' }} value="Due">Due</option>
                                     </select>
                                 </div>
 

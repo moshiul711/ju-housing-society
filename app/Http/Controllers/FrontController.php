@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
+    public $services;
     public function index()
     {
         return view('front.home.index');
@@ -33,7 +35,8 @@ class FrontController extends Controller
 
     public function services()
     {
-        return view('front.home.services');
+        $this->services = Service::all();
+        return view('front.home.services',['services'=>$this->services]);
     }
 
 }

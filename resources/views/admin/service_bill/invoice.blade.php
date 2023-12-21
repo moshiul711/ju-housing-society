@@ -244,11 +244,7 @@
             <tr class="item">
                 <td>Late Fees</td>
                 <td>
-                    @if($bill->total_charge - $bill->total ==0)
-                        {{ $bill->late_fees }}
-                    @else
-                        0
-                    @endif
+                    {{ $bill->late_amount }}
                 </td>
             </tr>
 

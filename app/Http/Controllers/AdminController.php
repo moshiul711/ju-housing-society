@@ -137,13 +137,5 @@ class AdminController extends Controller
         return response()->json(ServiceDetail::where('id', $_GET['id'])->get());
     }
 
-    public function createCommunityService()
-    {
-        return view('admin.service.create');
-    }
-
-    public function storeCommunityService(Request $request)
-    {
-        Service::serviceStore($request);
-    }
+    
 }
