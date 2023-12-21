@@ -178,23 +178,17 @@
                             <ul class="slide-menu">
                                 <li><a href="{{ route('member.create') }}" class="slide-item">Member Add</a></li>
                                 <li><a href="{{ route('member.index') }}" class="slide-item">Member List</a></li>
-{{--                                <li><a href="{{ route('manage') }}" class="slide-item">Manage Fees & Charges</a></li>--}}
                             </ul>
                         </li>
 
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M21.5,21H20V4.5C20,4.223877,19.776123,4,19.5,4S19,4.223877,19,4.5V21h-3v-8.5c0-0.276123-0.223877-0.5-0.5-0.5S15,12.223877,15,12.5V21h-3V8.5C12,8.223877,11.776123,8,11.5,8S11,8.223877,11,8.5V21H8v-4.5C8,16.223877,7.776123,16,7.5,16S7,16.223877,7,16.5V21H3V2.5C3,2.223877,2.776123,2,2.5,2S2,2.223877,2,2.5v19.0005493C2.0001831,21.7765503,2.223999,22.0001831,2.5,22h19c0.276123,0,0.5-0.223877,0.5-0.5S21.776123,21,21.5,21z"/></svg>--}}
-                                {{--<span class="side-menu__label">Charts</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Charts</a></li>--}}
-                                {{--<li><a href="chart-echart.html" class="slide-item"> ECharts</a></li>--}}
-                                {{--<li><a href="chart-chartjs.html" class="slide-item">Chart Js</a></li>--}}
-                                {{--<li><a href="chart-flot.html" class="slide-item"> Flot Charts</a></li>--}}
-                                {{--<li><a href="chart-morris.html" class="slide-item"> Morris Charts</a></li>--}}
-                                {{--<li><a href="chart-nvd3.html" class="slide-item">Nvd3 Charts</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</li>--}}
+                        <li class="slide">
+                            <a class="side-menu__item" data-bs-toggle="slide" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M21.5,21H20V4.5C20,4.223877,19.776123,4,19.5,4S19,4.223877,19,4.5V21h-3v-8.5c0-0.276123-0.223877-0.5-0.5-0.5S15,12.223877,15,12.5V21h-3V8.5C12,8.223877,11.776123,8,11.5,8S11,8.223877,11,8.5V21H8v-4.5C8,16.223877,7.776123,16,7.5,16S7,16.223877,7,16.5V21H3V2.5C3,2.223877,2.776123,2,2.5,2S2,2.223877,2,2.5v19.0005493C2.0001831,21.7765503,2.223999,22.0001831,2.5,22h19c0.276123,0,0.5-0.223877,0.5-0.5S21.776123,21,21.5,21z"/></svg>
+                                <span class="side-menu__label">Services</span><i class="angle fa fa-angle-right"></i></a>
+                            <ul class="slide-menu">
+                                <li><a href="{{ route('service.create') }}" class="slide-item">Create Services</a></li>
+                            </ul>
+                        </li>
                         {{--<li class="slide">--}}
                             {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
                                 {{--<svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M12,2C6.4771729,2,2,6.4771729,2,12s4.4771729,10,10,10c5.5201416-0.0064697,9.9935303-4.4798584,10-10C22,6.4771729,17.5228271,2,12,2z M19.7819214,7.5h-9.2255249l2.5594482-4.4225464C15.9681396,3.4337769,18.4015503,5.1206055,19.7819214,7.5z M14.0211182,8.5l2.0198364,3.503479L14.0192871,15.5H9.9798584l-2.0228882-3.5084229L9.9776611,8.5H14.0211182z M12,3c0.0019531,0,0.0038452,0.0003052,0.0057983,0.0003052L7.380249,10.991272L4.8326416,6.5727539C6.4761353,4.4058838,9.0706177,3,12,3z M3,12c0-1.6405029,0.4459839-3.1737671,1.2128296-4.49823L8.8244019,15.5H3.7061157C3.2515259,14.4241333,3,13.2414551,3,12z M4.2138672,16.5h9.2272339l-2.5576782,4.423584C8.0288696,20.5695801,5.5935059,18.8815918,4.2138672,16.5z M12,21c-0.0021362,0-0.0041504-0.0003052-0.0062866-0.0003052l4.6235962-7.996582l2.550354,4.4237671C17.524231,19.5939941,14.9295654,21,12,21z M15.1746826,8.5h5.1159668C20.7460938,9.5758057,20.9986572,10.7584839,21,12c0,1.6407471-0.446106,3.1741943-1.2131348,4.4987183L15.1746826,8.5z"/></svg>--}}
@@ -587,38 +581,14 @@
 <!-- SWITCHER JS -->
 <script src="{{ asset('/') }}admin/assets/switcher/js/switcher.js"></script>
 
+<!-- WYSIWYG Editor JS -->
+<script src="{{ asset('/') }}admin/assets/plugins/wysiwyag/jquery.richtext.js"></script>
+<script src="{{ asset('/') }}admin/assets/plugins/wysiwyag/wysiwyag.js"></script>
+<script src="{{ asset('/') }}admin/assets/plugins/summernote-editor/summernote1.js"></script>
+		<script src="{{ asset('/') }}admin/assets/js/summernote.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-<script>
-    function getServiceDetailsByYear(serviceDetailsId) {
-        $.ajax({
-            type : "GET",
-            url : "{{ route('getServiceDetailsByYear') }}",
-            data : { id:serviceDetailsId },
-            dataType: "JSON",
-            success : function (response) {
-                var option;
-
-                $.each(response, function (key,value) {
-                    console.log(key);
-                    console.log(value);
-
-
-                    // option += '<div class="row"> +
-                    //     '                                <label for="" class="col-md-2"> Membership Fees : </label>' +
-                    //     '                                <div class="form-group col-md-10">' +
-                    //     '                                    <input type="number" value="'+value.key+'" name="membership" class="form-control" id="inputName" placeholder="Membership Fees" readonly>' +
-                    //     '                                </div>' +
-                    //     '                            </div>'
-                });
-            }
-        })
-    }
-</script>
-
 </body>
-
-
-<!-- Mirrored from laravel8.spruko.com/noa/index by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 May 2023 13:08:40 GMT -->
 </html>

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Service;
 use Illuminate\Support\Facades\DB;
 use App\Models\ServiceDetail;
 use App\Models\Teacher;
@@ -133,5 +135,15 @@ class AdminController extends Controller
     public function getServiceDetailsByYear()
     {
         return response()->json(ServiceDetail::where('id', $_GET['id'])->get());
+    }
+
+    public function createCommunityService()
+    {
+        return view('admin.service.create');
+    }
+
+    public function storeCommunityService(Request $request)
+    {
+        Service::serviceStore($request);
     }
 }

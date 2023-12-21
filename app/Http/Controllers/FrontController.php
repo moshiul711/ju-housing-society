@@ -31,4 +31,9 @@ class FrontController extends Controller
         return view('front.home.forms');
     }
 
+    public function services()
+    {
+        return view('front.home.services');
+    }
+
 }

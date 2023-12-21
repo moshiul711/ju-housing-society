@@ -21,6 +21,7 @@ Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 Route::get('/about',[FrontController::class,'about'])->name('about');
 Route::get('/photo',[FrontController::class,'photo'])->name('photo');
 Route::get('/forms',[FrontController::class,'forms'])->name('forms');
+Route::get('/services',[FrontController::class,'services'])->name('services');
 
 
 
@@ -59,6 +60,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/member/edit/{id}',[AdminController::class,'editMember'])->name('member.edit');
     Route::post('/member/store',[AdminController::class,'storeMember'])->name('member.store');
     Route::post('/member/update/{id}',[AdminController::class,'updateMember'])->name('member.update');
+
+    Route::get('/service/create',[AdminController::class,'createCommunityService'])->name('service.create');
+    Route::post('/service/store',[AdminController::class,'storeCommunityService'])->name('service.store');
 
     Route::get('/getServiceDetailsByYear',[AdminController::class,'getServiceDetailsByYear'])->name('getServiceDetailsByYear');
 });

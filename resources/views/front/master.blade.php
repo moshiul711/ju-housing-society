@@ -1,20 +1,10 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
-
 <head>
     <title>Diversify</title>
     <meta charset="utf-8">
-    <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <![endif]-->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="{{ asset('/') }}front/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('/') }}front/css/animations.css">
     <link rel="stylesheet" href="{{ asset('/') }}front/css/fonts.css">
@@ -26,12 +16,6 @@
     <script src="{{ asset('/') }}front/js/vendor/html5shiv.min.js"></script>
     <script src="{{ asset('/') }}front/js/vendor/respond.min.js"></script>
     <script src="{{ asset('/') }}front/js/vendor/jquery-1.12.4.min.js"></script>
-
-
-    <![endif]-->
-
-    {{--<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />--}}
-
 
 </head>
 
@@ -74,52 +58,32 @@
                                     <li class="active"> <a href="{{ route('home') }}">Home</a></li>
                                     <li> <a href="about.html">About</a></li>
                                     <!-- eof pages -->
-                                    <li> <a href="#">Services</a>
-                                        <ul>
-                                            <li> <a href="services.html">Services</a> </li>
-                                            <li> <a href="service-single.html">Single Service</a> </li>
-                                        </ul>
+                                    <li> <a href="{{ route('services') }}">Services</a>
+                                    
                                     </li>
 
-                                    <!-- gallery -->
                                     <li> <a href="#">Gallery</a>
                                         <ul>
-                                            <!-- Gallery regular -->
                                             <li> <a href="{{ route('photo') }}">Photos</a></li>
-                                            <!-- eof Gallery regular -->
-                                            <!-- Gallery full width -->
                                             <li> <a href="#">Videos</a></li>
-                                            <!-- eof Gallery full width -->
                                         </ul>
                                     </li>
-                                    <!-- eof Gallery -->
-
-                                    <!-- Forms -->
+                            
                                     <li> <a href="{{ route('forms') }}">Forms</a></li>
-                                    <!-- eof Forms -->
-
-                                    <!-- Notice/News -->
+                                    
                                     <li>
                                         <a href="#">Notice</a>
                                         <ul>
-                                            <!-- Gallery regular -->
                                             <li> <a href="">News</a></li>
-                                            <!-- eof Gallery regular -->
-                                            <!-- Gallery full width -->
                                             <li> <a href="gallery-fullwidth.html">Events</a></li>
-                                            <!-- eof Gallery full width -->
                                         </ul>
                                     </li>
 
                                     <li>
                                         <a href="#">Members</a>
                                         <ul>
-                                            <!-- Gallery regular -->
                                             <li> <a href="">Executives</a></li>
-                                            <!-- eof Gallery regular -->
-                                            <!-- Gallery full width -->
                                             <li> <a href="gallery-fullwidth.html">Staffs</a></li>
-                                            <!-- eof Gallery full width -->
                                         </ul>
                                     </li>
                                     <!-- eof Notice/News -->
@@ -136,7 +100,7 @@
                                         </a>
                                         @else
                                         <a href="">
-                                            <button class="btn-warning">{{ Session::get('teacher_name') }}</button>
+                                            <button class="btn-success">{{ Session::get('teacher_name') }}</button>
                                         </a>
                                             <ul>
                                                 <!-- Gallery regular -->
