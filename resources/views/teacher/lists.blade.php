@@ -45,67 +45,21 @@
                                             <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                 <thead>
                                                 <tr>
-                                                    <th>Image</th>
                                                     <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>phone</th>
-                                                    <th>Address</th>
-                                                    <th>Payment Status</th>
+                                                    <th>Plot_no</th>
+                                                    <th>Membership No</th>
+                                                    <th>Phone</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
+                                                @foreach($teachers as $teacher)
                                                 <tr>
-                                                    <td><img src="{{ asset('/') }}1.jpg" class="img-thumbnail" height="80" width="90" alt=""></td>
-                                                    <td>Md Jabbar Khan</td>
-                                                    <td>Leader</td>
-                                                    <td>0174837652</td>
-                                                    <td>Savar</td>
-                                                    <td >
-                                                        <button class="btn-success">Paid</button>
-                                                    </td>
+                                                    <td>{{ $teacher->name }}</td>
+                                                    <td>{{ $teacher->plot_no }}</td>
+                                                    <td>{{ $teacher->member_no }}</td>
+                                                    <td>{{ $teacher->phone }}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td><img src="{{ asset('/') }}2.jpg" class="img-thumbnail" height="80" width="90" alt=""></td>
-                                                    <td>Md Jabbar Khan</td>
-                                                    <td>Leader</td>
-                                                    <td>0174837652</td>
-                                                    <td>Savar</td>
-                                                    <td>
-                                                        <button class="btn-danger">due</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="{{ asset('/') }}3.jpg" class="img-thumbnail" height="80" width="90" alt=""></td>
-                                                    <td>Md Jabbar Khan</td>
-                                                    <td>Leader</td>
-                                                    <td>0174837652</td>
-                                                    <td>Savar</td>
-                                                    <td>
-                                                        <button class="btn-danger">due</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="{{ asset('/') }}4.jpg" class="img-thumbnail" height="80" width="90" alt=""></td>
-                                                    <td>Md Jabbar Khan</td>
-                                                    <td>Leader</td>
-                                                    <td>0174837652</td>
-                                                    <td>Savar</td>
-                                                    <td>
-                                                        <button class="btn-success">Paid</button>
-                                                    </td>
-                                                </tr>
-
-                                                </tbody>
-                                                <tfoot>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>Office</th>
-                                                    <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
-                                                </tr>
-                                                </tfoot>
+                                                @endforeach
                                             </table>
                                         </div>
                                     </article>

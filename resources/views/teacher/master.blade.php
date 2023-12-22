@@ -72,43 +72,32 @@
                             <nav class="mainmenu_wrapper">
                                 <ul class="mainmenu nav sf-menu">
                                     <li class="active"> <a href="{{ route('home') }}">Home</a></li>
-                                    <li> <a href="about.html">About</a></li>
-                                    <!-- eof pages -->
-                                    <li> <a href="#">Community Services</a>
-                                        <ul>
-                                            <li> <a href="services.html">Services</a> </li>
-                                            <li> <a href="service-single.html">Single Service</a> </li>
-                                        </ul>
+                                    <li> <a href="{{ route('about') }}">About</a></li>
+                                    <li> <a href="{{ route('services') }}">Services</a> </li>
+
+                                    <li> <a href="{{ route('photo') }}">Gallery</a>
+                                        {{--<ul>--}}
+                                        {{--<li> <a href="{{ route('photo') }}">Photos</a></li>--}}
+                                        {{--<li> <a href="#">Videos</a></li>--}}
+                                        {{--</ul>--}}
                                     </li>
 
-                                    <!-- gallery -->
-                                    <li> <a href="gallery-regular.html">Gallery</a>
-                                        <ul>
-                                            <!-- Gallery regular -->
-                                            <li> <a href="gallery-regular.html">Photos</a></li>
-                                            <!-- eof Gallery regular -->
-                                            <!-- Gallery full width -->
-                                            <li> <a href="gallery-fullwidth.html">Videos</a></li>
-                                            <!-- eof Gallery full width -->
-                                        </ul>
-                                    </li>
-                                    <!-- eof Gallery -->
+                                    <li> <a href="{{ route('forms') }}">Forms</a></li>
 
-                                    <!-- Forms -->
-                                    <li> <a href="blog-right.html">Forms</a></li>
-                                    <!-- eof Forms -->
-
-                                    <!-- Notice/News -->
                                     <li>
-                                        <a href="blog-right.html">Notice</a>
-                                        <ul>
-                                            <!-- Gallery regular -->
-                                            <li> <a href="gallery-regular.html">News</a></li>
-                                            <!-- eof Gallery regular -->
-                                            <!-- Gallery full width -->
-                                            <li> <a href="gallery-fullwidth.html">Events</a></li>
-                                            <!-- eof Gallery full width -->
-                                        </ul>
+                                        <a href="#">Notice Board</a>
+                                        {{--<ul>--}}
+                                            {{--<li> <a href="">News</a></li>--}}
+                                            {{--<li> <a href="gallery-fullwidth.html">Events</a></li>--}}
+                                        {{--</ul>--}}
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('committee') }}">Members</a>
+                                        {{--<ul>--}}
+                                        {{--<li> <a href="">Executives</a></li>--}}
+                                        {{--<li> <a href="gallery-fullwidth.html">Staffs</a></li>--}}
+                                        {{--</ul>--}}
                                     </li>
                                     <!-- eof Notice/News -->
 
@@ -119,13 +108,13 @@
                                     <!-- Payment -->
                                     <li>
                                         @if(!Session::get('teacher_id'))
-                                        <a href="{{ route('teacher.login') }}">
-                                            <button class="btn-warning">Login</button>
-                                        </a>
+                                            <a href="{{ route('teacher.login') }}">
+                                                <button class="btn-warning">Member Login</button>
+                                            </a>
                                         @else
-                                        <a href="">
-                                            <button class="btn-warning">{{ Session::get('teacher_name') }}</button>
-                                        </a>
+                                            <a href="">
+                                                <button class="btn-success">Welcome</button>
+                                            </a>
                                             <ul>
                                                 <!-- Gallery regular -->
                                                 <li> <a href="{{ route('teacher.dashboard') }}">Dashboard</a></li>

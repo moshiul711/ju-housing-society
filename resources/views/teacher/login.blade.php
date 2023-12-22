@@ -13,7 +13,7 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" name="email_phone" placeholder="Enter Phone Number or Email" required>
+                                    <input type="text" class="form-control" name="email_phone" placeholder="Enter Phone Number or Email or Plot No" required>
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <input type="password" class="form-control" name="password" placeholder="Enter Password" required>

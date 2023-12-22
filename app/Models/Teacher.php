@@ -32,7 +32,7 @@ class Teacher extends Model
 
     public static function teacherLogin($request)
     {
-        self::$teacher = Teacher::where('phone',$request->email_phone)->orWhere('email',$request->email_phone)->first();
+        self::$teacher = Teacher::where('phone',$request->email_phone)->orWhere('email',$request->email_phone)->orWhere('plot_no',$request->email_phone)->first();
         return self::$teacher;
     }
     public static function teacherProfileUpdate($request,$id,$name)

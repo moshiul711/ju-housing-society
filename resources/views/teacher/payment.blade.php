@@ -46,43 +46,24 @@
                                                 <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>payment Priod</th>
-                                                    <th>Payment Amount</th>
-                                                    <th>Payment Date</th>
-                                                    <th>Payment Type</th>
-                                                    <th>Payment Status</th>
+
+                                                    <th>Total Charge</th>
+                                                    <th>Status</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
+                                                @foreach($histories as $history)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>2023</td>
-                                                    <td>3000</td>
-                                                    <td>30-12-2023</td>
-                                                    <td>Cash</td>
-                                                    <td class="text-success bold">Paid</td>
-                                                </tr>
+                                                    <td>{{ $loop->iteration }}</td>
 
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>2023</td>
-                                                    <td>3000</td>
-                                                    <td>30-12-2023</td>
-                                                    <td>Bank</td>
-                                                    <td class="text-danger bold">Due</td>
+                                                    <td>{{ $history->total_charge }}</td>
+                                                    <td>{{ $history->payment_status }}</td>
+
                                                 </tr>
+                                                @endforeach
 
                                                 </tbody>
-                                                <tfoot>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>Office</th>
-                                                    <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
-                                                </tr>
-                                                </tfoot>
+
                                             </table>
                                         </div>
                                     </article>

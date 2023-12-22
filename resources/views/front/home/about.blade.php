@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-4" data-animation="fadeInUp" data-delay="600">
                     <div class="embed-responsive embed-responsive-3by2"> <a href="https://www.youtube.com/embed/xKxrkht7CpY" class="embed-placeholder">
-                            <img src="{{ asset('/') }}front/images/gallery/01.jpg" alt="">
+                            <img src="{{ asset('/') }}about.jpg" alt="">
                         </a> </div>
                 </div>
                 <div class="col-md-8" data-animation="fadeInRight" data-delay="300">

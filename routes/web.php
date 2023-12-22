@@ -6,7 +6,9 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
-
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\CommitteeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,7 @@ Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 Route::get('/about',[FrontController::class,'about'])->name('about');
 Route::get('/photo',[FrontController::class,'photo'])->name('photo');
 Route::get('/forms',[FrontController::class,'forms'])->name('forms');
+Route::get('/committee',[FrontController::class,'committee'])->name('committee');
 Route::get('/services',[FrontController::class,'services'])->name('services');
 
 
@@ -70,9 +73,18 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::post('/service/update/{id}',[ServiceController::class,'updateCommunityService'])->name('service.update');
     Route::get('/service/delete/{id}',[ServiceController::class,'destroyCommunityService'])->name('service.delete');
 
-     Route::get('/about/create',[AboutController::class,'createAbout'])->name('about.create');
-     Route::post('/about/store',[AboutController::class,'storeAbout'])->name('about.store');
+     Route::get('/image/create',[MediaController::class,'createimage'])->name('image.create');
+     Route::post('/image/store',[MediaController::class,'storeimage'])->name('image.store');
+     Route::get('/image/manage',[MediaController::class,'manageImage'])->name('image.manage');
+     Route::get('/image/delete/{id}',[MediaController::class,'DeleteImage'])->name('image.delete');
 
+    Route::get('/form/create',[FormController::class,'createForm'])->name('form.create');
+    Route::post('/form/store',[FormController::class,'storeForm'])->name('form.store');
+    Route::get('/form/manage',[FormController::class,'index'])->name('form.manage');
+    Route::get('/form/delete/{id}',[FormController::class,'deleteForm'])->name('form.delete');
+
+    Route::get('/committee/create',[CommitteeController::class,'createCommittee'])->name('committee.create');
+    Route::post('/committee/store',[CommitteeController::class,'storeCommittee'])->name('committee.store');
 
     Route::get('/about/manage',[AboutController::class,'index'])->name('about.manage');
     Route::get('/about/edit/{id}',[AboutController::class,'editAbout'])->name('about.edit');

@@ -59,11 +59,11 @@
                                     <li> <a href="{{ route('about') }}">About</a></li>
                                     <li> <a href="{{ route('services') }}">Services</a> </li>
 
-                                    <li> <a href="#">Gallery</a>
-                                        <ul>
-                                            <li> <a href="{{ route('photo') }}">Photos</a></li>
-                                            <li> <a href="#">Videos</a></li>
-                                        </ul>
+                                    <li> <a href="{{ route('photo') }}">Gallery</a>
+                                        {{--<ul>--}}
+                                            {{--<li> <a href="{{ route('photo') }}">Photos</a></li>--}}
+                                            {{--<li> <a href="#">Videos</a></li>--}}
+                                        {{--</ul>--}}
                                     </li>
                             
                                     <li> <a href="{{ route('forms') }}">Forms</a></li>
@@ -77,11 +77,11 @@
                                     </li>
 
                                     <li>
-                                        <a href="#">Members</a>
-                                        <ul>
-                                            <li> <a href="">Executives</a></li>
-                                            <li> <a href="gallery-fullwidth.html">Staffs</a></li>
-                                        </ul>
+                                        <a href="{{ route('committee') }}">Members</a>
+                                        {{--<ul>--}}
+                                            {{--<li> <a href="">Executives</a></li>--}}
+                                            {{--<li> <a href="gallery-fullwidth.html">Staffs</a></li>--}}
+                                        {{--</ul>--}}
                                     </li>
                                     <!-- eof Notice/News -->
 
@@ -97,7 +97,7 @@
                                         </a>
                                         @else
                                         <a href="">
-                                            <button class="btn-success">{{ Session::get('teacher_name') }}</button>
+                                            <button class="btn-success">Welcome</button>
                                         </a>
                                             <ul>
                                                 <!-- Gallery regular -->
@@ -134,8 +134,8 @@
                     <div class="col-md-4 col-sm-6 col-xs-12 col-md-push-4 text-center">
                         <div class="widget widget_text widget_about">
                             <div class="logo logo_with_text bottommargin_10"> <img src="{{ asset('/') }}front/images/logo.png" alt=""> <span class="logo_text">
-                            Diversify
-                            <small class="highlight4">Jahangirnagar Co-Operative Housing Society</small>
+                            Jahangirnagar
+                            <small class="highlight4">Co-Operative Housing Society</small>
                         </span> </div>
                             <p>The mission of Our Community Center is to enhance and sustain the health and well-being of the lesbian, gay, bisexual, transgender.</p>
                             <p class="topmargin_25"> <a class="social-icon border-icon rounded-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon border-icon rounded-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon border-icon rounded-icon socicon-google"

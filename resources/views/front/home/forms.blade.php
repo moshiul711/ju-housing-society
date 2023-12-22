@@ -1,25 +1,18 @@
 @extends('front.master')
 
 @section('main-content')
-    <section class="ls page_portfolio section_padding_top_100 section_padding_bottom_100">
+    <section class="ls page_portfolio section_padding_top_50 section_padding_bottom_50">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                @foreach($forms as $form)
+                <div class="col-sm-4">
                     <ul class="list2 color2 checklist greylinks">
                         <li>
-                            <a target="_blank" href="https://www.arunapallibd.org/storage/forms/July2023/ffUXnF8zmKv06xw3lIYb.pdf">Utkorsho admission form 20230224</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.arunapallibd.org/storage/forms/January2021/6imVlxCgVPy4eQAGlC5g.pdf">Information form for tenants</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.arunapallibd.org/storage/forms/August2019/y6PJl5QYcP4t1hAvUNZU.pdf">Plot Transfer Application Form</a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.arunapallibd.org/storage/forms/August2019/CU9QpGEw8xtadwOLaKXW.doc">Associate Membership Form</a>
+                            <a target="_blank" href="{{ asset($form->form) }}">{{ $form->title }}</a>
                         </li>
                     </ul>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

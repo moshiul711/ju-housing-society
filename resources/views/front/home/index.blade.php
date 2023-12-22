@@ -33,7 +33,7 @@
                     <!-- eof .container -->
                 </li>
                 <li>
-                    <div class="slide-image-wrap"> <img src="{{ asset('/') }}front/images/slide02.jpg" alt="" /> </div>
+                    <div class="slide-image-wrap"> <img src="{{ asset('/') }}front/images/s2.jpg" alt="" /> </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 text-center">
@@ -61,7 +61,7 @@
                     <!-- eof .container -->
                 </li>
                 <li>
-                    <div class="slide-image-wrap"> <img src="{{ asset('/') }}front/images/slide03.jpg" alt="" /> </div>
+                    <div class="slide-image-wrap"> <img src="{{ asset('/') }}front/images/s3.jpg" alt="" /> </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 text-center">
@@ -161,73 +161,82 @@
             <div class="row">
                 <div class="col-md-6 col-md-push-6 to_animate" data-animation="fadeInUp" data-delay="600">
                     <div class="embed-responsive embed-responsive-3by2"> <a href="https://www.youtube.com/embed/xKxrkht7CpY" class="embed-placeholder">
-                            <img src="{{ asset('/') }}front/images/gallery/01.jpg" alt="">
+                            <img src="{{ asset('/') }}about.jpg" alt="">
                         </a> </div>
                 </div>
                 <div class="col-md-6 col-md-pull-6 to_animate" data-animation="fadeInRight" data-delay="300">
                     <h2 class="section_header color4"> About Our Society </h2>
                     <p class="section-excerpt grey">The Center is committed to a policy of non-discrimination in employment and in the provision of all services.</p>
-                    <p>The mission of The Diversify LGBT Community Center is to enhance and sustain the health and well-being of the lesbian, gay, bisexual, transgender and HIV communities by providing activities, programs and services that create community.Empower community
-                        members; provide essential resources; advocate for civil and human rights; and embrace, promote and support our cultural diversity. <a href="service-single.html#tester" class="more-link">read more</a></p>
+                    <p>
+                        Registered under the Bangladesh Samabay Samity Act 2001 & Bangladesh Samabay Samity Act Amendment Act 2002
+                    </p>
+                    <p>
+                        The Registered Office of the Society shall be situated at the site of the Jahangirnagar University Co¬operative Housing Society Limited (ARUNAPALLI) under Upazila — Savar, Zila — Dhaka, Post Office¬Jahangirnagar University, Code — 1342, Bangladesh.
+                    </p>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="team" class="ls section_padding_top_90">
+    <section id="team" class="ls section_padding_top_50">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 bottommargin_0 to_animate" data-animation="fadeInUp">
                     <h2 class="section_header color">Leaders of Our Community</h2>
                     <div class="owl-carousel loop-colors topmargin_40" data-dots="false" data-nav="true" data-responsive-lg="3">
+                        @foreach($committees as $committee)
                         <article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">
-                            <div class="item-media"> <img src="{{ asset('/') }}front/images/team/01.jpg" alt=""> </div>
+                            <div class="item-media"> <img src="{{ asset($committee->image) }}" alt=""> </div>
                             <div class="item-content">
                                 <header class="entry-header">
-                                    <h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Adeline Barnett</a> </h3> <span class="small-text highlight">leader</span> </header>
-                                <p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>
+                                    <h3 class="entry-title small bottommargin_0"> <a href="#">{{ $committee->name }}</a> </h3> <span class="small-text highlight">{{ $committee->role }}</span> </header>
+                                <p class="member-social greylinks">
+                                    {{ $committee->phone }}
+                                </p>
                             </div>
                         </article>
-                        <article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">
-                            <div class="item-media"> <img src="{{ asset('/') }}front/images/team/02.jpg" alt=""> </div>
-                            <div class="item-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Elva Chandler</a> </h3> <span class="small-text highlight">assistant</span> </header>
-                                <p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>
-                            </div>
-                        </article>
-                        <article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">
-                            <div class="item-media"> <img src="{{ asset('/') }}front/images/team/03.jpg" alt=""> </div>
-                            <div class="item-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Owen Guzman</a> </h3> <span class="small-text highlight">assistant</span> </header>
-                                <p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>
-                            </div>
-                        </article>
-                        <article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">
-                            <div class="item-media"> <img src="{{ asset('/') }}front/images/team/04.jpg" alt=""> </div>
-                            <div class="item-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Mae Alvarez</a> </h3> <span class="small-text highlight">leader</span> </header>
-                                <p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>
-                            </div>
-                        </article>
-                        <article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">
-                            <div class="item-media"> <img src="{{ asset('/') }}front/images/team/05.jpg" alt=""> </div>
-                            <div class="item-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Elnora Edwards</a> </h3> <span class="small-text highlight">leader</span> </header>
-                                <p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>
-                            </div>
-                        </article>
-                        <article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">
-                            <div class="item-media"> <img src="{{ asset('/') }}front/images/team/06.jpg" alt=""> </div>
-                            <div class="item-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Addie Mack</a> </h3> <span class="small-text highlight">assistant</span> </header>
-                                <p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>
-                            </div>
-                        </article>
+                        @endforeach
+                        {{--<article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">--}}
+                            {{--<div class="item-media"> <img src="{{ asset('/') }}front/images/team/02.jpg" alt=""> </div>--}}
+                            {{--<div class="item-content">--}}
+                                {{--<header class="entry-header">--}}
+                                    {{--<h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Elva Chandler</a> </h3> <span class="small-text highlight">assistant</span> </header>--}}
+                                {{--<p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
+                        {{--<article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">--}}
+                            {{--<div class="item-media"> <img src="{{ asset('/') }}front/images/team/03.jpg" alt=""> </div>--}}
+                            {{--<div class="item-content">--}}
+                                {{--<header class="entry-header">--}}
+                                    {{--<h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Owen Guzman</a> </h3> <span class="small-text highlight">assistant</span> </header>--}}
+                                {{--<p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
+                        {{--<article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">--}}
+                            {{--<div class="item-media"> <img src="{{ asset('/') }}front/images/team/04.jpg" alt=""> </div>--}}
+                            {{--<div class="item-content">--}}
+                                {{--<header class="entry-header">--}}
+                                    {{--<h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Mae Alvarez</a> </h3> <span class="small-text highlight">leader</span> </header>--}}
+                                {{--<p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
+                        {{--<article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">--}}
+                            {{--<div class="item-media"> <img src="{{ asset('/') }}front/images/team/05.jpg" alt=""> </div>--}}
+                            {{--<div class="item-content">--}}
+                                {{--<header class="entry-header">--}}
+                                    {{--<h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Elnora Edwards</a> </h3> <span class="small-text highlight">leader</span> </header>--}}
+                                {{--<p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
+                        {{--<article class="vertical-item content-padding big-padding with_border bottom_color_border text-center">--}}
+                            {{--<div class="item-media"> <img src="{{ asset('/') }}front/images/team/06.jpg" alt=""> </div>--}}
+                            {{--<div class="item-content">--}}
+                                {{--<header class="entry-header">--}}
+                                    {{--<h3 class="entry-title small bottommargin_0"> <a href="team-single.html">Addie Mack</a> </h3> <span class="small-text highlight">assistant</span> </header>--}}
+                                {{--<p class="member-social greylinks"> <a class="social-icon socicon-facebook" href="#" title="Facebook"></a> <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a class="social-icon socicon-google" href="#" title="Google"></a> </p>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
                     </div>
                 </div>
             </div>

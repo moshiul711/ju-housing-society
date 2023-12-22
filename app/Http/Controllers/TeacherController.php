@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use App\Models\TeacherPaymentStatus;
 use Illuminate\Http\Request;
 use Session;
 
@@ -34,13 +35,14 @@ class TeacherController extends Controller
 
     public function payment()
     {
-        $this->teacher = Teacher::find(Session::get('teacher_id'));
-        return view('teacher.payment',['teacher'=>$this->teacher]);
+        $histories = TeacherPaymentStatus::where('teacher_id',Session::get('teacher_id'))->get();
+        return view('teacher.payment',['histories'=>$histories]);
     }
 
     public function allTeacher()
     {
-        return view('teacher.lists');
+        $teachers = Teacher::all();
+        return view('teacher.lists',['teachers'=>$teachers]);
     }
 
 
