@@ -6526,7 +6526,7 @@ a.underline-link {
 
 .item-media img {
     height: 300px;
-    width: 400px
+    width: 100%
 }
 
 .media-links {

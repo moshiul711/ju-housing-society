@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Committee;
 use App\Models\Form;
+use App\Models\Notice;
 use App\Models\Photo;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\About;
+use Mockery\Matcher\Not;
 
 class FrontController extends Controller
 {
@@ -15,8 +17,10 @@ class FrontController extends Controller
     public function index()
     {
         $committees = Committee::all();
+        $notices = Notice::orderBy('id','desc')->get();
         return view('front.home.index',[
-            'committees' => $committees
+            'committees' => $committees,
+            'notices' => $notices
         ]);
     }
 
@@ -53,6 +57,12 @@ class FrontController extends Controller
     {
         $committee = Committee::all();
         return view("front.home.committee",['committees' => $committee]);
+    }
+
+    public function notice()
+    {
+        $notices = Notice::all();
+        return view('front.home.notice',['notices'=>$notices]);
     }
 
 }

@@ -190,7 +190,7 @@
                             <div class="item-media"> <img src="{{ asset($committee->image) }}" alt=""> </div>
                             <div class="item-content">
                                 <header class="entry-header">
-                                    <h3 class="entry-title small bottommargin_0"> <a href="#">{{ $committee->name }}</a> </h3> <span class="small-text highlight">{{ $committee->role }}</span> </header>
+                                    <h4 class="entry-title small bottommargin_0"> <a href="#">{{ $committee->name }}</a> </h4> <span class="small-text highlight">{{ $committee->role }}</span> </header>
                                 <p class="member-social greylinks">
                                     {{ $committee->phone }}
                                 </p>
@@ -243,185 +243,138 @@
         </div>
     </section>
 
-    <section id="events" class="ls section_padding_top_110">
+    <section id="events" class="ls section_padding_top_110 section_padding_bottom_100">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 bottommargin_0 to_animate" data-animation="fadeInUp">
-                    <div class="row masonry-feed columns_padding_1">
-                        <div class="col-xs-12 col-md-3">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-md-12">
-                                    <div class="vertical-item content-absolute text-center ds">
-                                        <div class="item-media"> <img src="{{ asset('/') }}front/images/gallery/02.jpg" alt=""> </div>
-                                        <div class="item-content darken_gradient">
-                                            <h3 class="entry-title"> <a href="gallery-single.html">Special at Crest Cafe</a> </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-12">
-                                    <div class="vertical-item content-absolute text-center ds">
-                                        <div class="item-media"> <img src="{{ asset('/') }}front/images/gallery/03.jpg" alt=""> </div>
-                                        <div class="item-content darken_gradient">
-                                            <h3 class="entry-title"> <a href="gallery-single.html">Karaoke at Flicks</a> </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
+                    <div class="row masonry-feed columns_padding_1 padding_10">
+                        @foreach($notices->take(3) as $notice)
+                        <div class="col-xs-12 col-md-4">
                             <div class="vertical-item closest-event content-absolute text-center ds">
-                                <div class="item-media"> <img src="{{ asset('/') }}front/images/gallery/04.jpg" alt=""> </div>
+                                <div class="item-media"> <img src="{{ asset($notice->image) }}" alt=""> </div>
                                 <div class="item-content darken_gradient">
-                                    <!-- <div id="comingsoon-countdown" data-count-to="March 6, 2018 15:00:00 GMT-05:00" data-format="DHM"></div> -->
-                                    <div id="comingsoon-countdown" data-format="DHMS"></div>
-                                    <h3 class="entry-title"> <a href="gallery-single.html">Tuesday All-Day Happy Hour</a> </h3>
-                                    <div class="entry-meta inline-content"> <span>
-										<i class="fa fa-map-marker highlight4 rightpadding_5" aria-hidden="true"></i>
-										229 Verna Viaduct, new york
-									</span> <span>
-										<i class="fa fa-clock-o highlight4 rightpadding_5" aria-hidden="true"></i>
-										2:00 pm to 2:00 am
-									</span> </div>
+                                    <h3 class="entry-title"> <a href="">{{ $notice->title }}</a> </h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-3">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-md-12">
-                                    <div class="vertical-item content-absolute text-center ds">
-                                        <div class="item-media"> <img src="{{ asset('/') }}front/images/gallery/05.jpg" alt=""> </div>
-                                        <div class="item-content darken_gradient">
-                                            <h3 class="entry-title"> <a href="gallery-single.html">Tuesdays at San Diego Eagle</a> </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-12">
-                                    <div class="vertical-item content-absolute text-center ds">
-                                        <div class="item-media"> <img src="{{ asset('/') }}front/images/gallery/06.jpg" alt=""> </div>
-                                        <div class="item-content darken_gradient">
-                                            <h3 class="entry-title"> <a href="gallery-single.html">Turnback Tuesdays at Lips</a> </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="ls section_padding_top_90 section_padding_bottom_110">
-        <div class="container">
-            <div class="row flex-wrap v-center">
-                <div class="col-sm-8 to_animate" data-animation="fadeInRight">
-                    <h2 class="section_header">Our Fresh Blog Posts</h2>
-                </div>
-                <div class="col-sm-4 text-right hidden-xs to_animate" data-animation="fadeInRight"> <a href="blog-full.html" class="view-more">View More</a> </div>
-                <div class="col-sm-12 topmargin_30">
-                    <div class="loop-colors">
-                        <article class="post format-small-image to_animate" data-animation="fadeInRight">
-                            <div class="side-item side-md content-padding big-padding with_border bottom_color_border left">
-                                <div class="row">
-                                    <div class="col-md-5 col-lg-4">
-                                        <div class="item-media entry-thumbnail"> <img src="{{ asset('/') }}front/images/gallery/07.jpg" alt=""> </div>
-                                    </div>
-                                    <div class="col-md-7 col-lg-8">
-                                        <div class="item-content">
-                                            <header class="entry-header">
-                                                <h3 class="entry-title small"> <a href="blog-single-right.html" rel="bookmark">Creating Spaces for Queer, Jewish Families</a> </h3>
-                                                <div class="entry-meta inline-content greylinks"> <span>
-													<i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-single-right.html">
-														<time datetime="2017-10-03T08:50:40+00:00">
-														17 jan, 2018</time>
-													</a>
-												</span> <span>
-													<i class="fa fa-user highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-right.html">Admin</a>
-												</span> <span class="categories-links">
-													<i class="fa fa-tags highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-right.html">Community</a>
-												</span> </div>
-                                            </header>
-                                            <div class="entry-content md-content-3lines-ellipsis">
-                                                <p>In corned beef incididunt exercitation. Brisket turducken consectetur bacon short ribs tenderloin boudin dolore. Chuck pork porchetta commodo ex nisi brisket elit dolore proident alcatra esse. Alcatra pork loin sint beef. Chicken pig tail
-                                                    tempor pork chop.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="post format-small-image topmargin_30 to_animate" data-animation="fadeInLeft">
-                            <div class="side-item side-md content-padding big-padding with_border bottom_color_border right">
-                                <div class="row">
-                                    <div class="col-md-5 col-lg-4">
-                                        <div class="item-media entry-thumbnail"> <img src="{{ asset('/') }}front/images/gallery/08.jpg" alt=""> </div>
-                                    </div>
-                                    <div class="col-md-7 col-lg-8">
-                                        <div class="item-content">
-                                            <header class="entry-header">
-                                                <h3 class="entry-title small"> <a href="blog-single-right.html" rel="bookmark">Holiday Resources for LGBT, Interfaith Families</a> </h3>
-                                                <div class="entry-meta inline-content greylinks"> <span>
-													<i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-single-right.html">
-														<time datetime="2017-10-03T08:50:40+00:00">
-														17 jan, 2018</time>
-													</a>
-												</span> <span>
-													<i class="fa fa-user highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-right.html">Admin</a>
-												</span> <span class="categories-links">
-													<i class="fa fa-tags highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-right.html">Services</a>
-												</span> </div>
-                                            </header>
-                                            <div class="entry-content md-content-3lines-ellipsis">
-                                                <p>Qui laboris ut, duis excepteur fatback boudin nostrud esse ea pork chop cupidatat cupim. Picanh landjaeger buffalo consequat jerky brisket, cupim ribeye magna beef occaecat. Venison salami pancetta t-bone ut, exercitation aliqua.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="post format-small-image topmargin_30 to_animate" data-animation="fadeInRight">
-                            <div class="side-item side-md content-padding big-padding with_border bottom_color_border left">
-                                <div class="row">
-                                    <div class="col-md-5 col-lg-4">
-                                        <div class="item-media entry-thumbnail"> <img src="{{ asset('/') }}front/images/gallery/09.jpg" alt=""> </div>
-                                    </div>
-                                    <div class="col-md-7 col-lg-8">
-                                        <div class="item-content">
-                                            <header class="entry-header">
-                                                <h3 class="entry-title small"> <a href="blog-single-right.html" rel="bookmark">Transgender 101. America With You</a> </h3>
-                                                <div class="entry-meta inline-content greylinks"> <span>
-													<i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-single-right.html">
-														<time datetime="2017-10-03T08:50:40+00:00">
-														17 jan, 2018</time>
-													</a>
-												</span> <span>
-													<i class="fa fa-user highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-right.html">Admin</a>
-												</span> <span class="categories-links">
-													<i class="fa fa-tags highlight rightpadding_5" aria-hidden="true"></i>
-													<a href="blog-right.html">Transgender</a>
-												</span> </div>
-                                            </header>
-                                            <div class="entry-content md-content-3lines-ellipsis">
-                                                <p>Nostrud ham hock fatback aute tri-tip sausage doner mollit quis laboris. Jerky meatball cupim filet mignon. Prosciutto rump eu fatback andouille eiusmod strip steak. Fugiat shoulder salami chuck in mollit. Minim nulla beef ribs adipisicing.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{--<section id="blog" class="ls section_padding_top_90 section_padding_bottom_110">--}}
+        {{--<div class="container">--}}
+            {{--<div class="row flex-wrap v-center">--}}
+                {{--<div class="col-sm-8 to_animate" data-animation="fadeInRight">--}}
+                    {{--<h2 class="section_header">Our Fresh Blog Posts</h2>--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-4 text-right hidden-xs to_animate" data-animation="fadeInRight"> <a href="blog-full.html" class="view-more">View More</a> </div>--}}
+                {{--<div class="col-sm-12 topmargin_30">--}}
+                    {{--<div class="loop-colors">--}}
+                        {{--<article class="post format-small-image to_animate" data-animation="fadeInRight">--}}
+                            {{--<div class="side-item side-md content-padding big-padding with_border bottom_color_border left">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-md-5 col-lg-4">--}}
+                                        {{--<div class="item-media entry-thumbnail"> <img src="{{ asset('/') }}front/images/gallery/07.jpg" alt=""> </div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-7 col-lg-8">--}}
+                                        {{--<div class="item-content">--}}
+                                            {{--<header class="entry-header">--}}
+                                                {{--<h3 class="entry-title small"> <a href="blog-single-right.html" rel="bookmark">Creating Spaces for Queer, Jewish Families</a> </h3>--}}
+                                                {{--<div class="entry-meta inline-content greylinks"> <span>--}}
+													{{--<i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-single-right.html">--}}
+														{{--<time datetime="2017-10-03T08:50:40+00:00">--}}
+														{{--17 jan, 2018</time>--}}
+													{{--</a>--}}
+												{{--</span> <span>--}}
+													{{--<i class="fa fa-user highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-right.html">Admin</a>--}}
+												{{--</span> <span class="categories-links">--}}
+													{{--<i class="fa fa-tags highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-right.html">Community</a>--}}
+												{{--</span> </div>--}}
+                                            {{--</header>--}}
+                                            {{--<div class="entry-content md-content-3lines-ellipsis">--}}
+                                                {{--<p>In corned beef incididunt exercitation. Brisket turducken consectetur bacon short ribs tenderloin boudin dolore. Chuck pork porchetta commodo ex nisi brisket elit dolore proident alcatra esse. Alcatra pork loin sint beef. Chicken pig tail--}}
+                                                    {{--tempor pork chop.</p>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
+                        {{--<article class="post format-small-image topmargin_30 to_animate" data-animation="fadeInLeft">--}}
+                            {{--<div class="side-item side-md content-padding big-padding with_border bottom_color_border right">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-md-5 col-lg-4">--}}
+                                        {{--<div class="item-media entry-thumbnail"> <img src="{{ asset('/') }}front/images/gallery/08.jpg" alt=""> </div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-7 col-lg-8">--}}
+                                        {{--<div class="item-content">--}}
+                                            {{--<header class="entry-header">--}}
+                                                {{--<h3 class="entry-title small"> <a href="blog-single-right.html" rel="bookmark">Holiday Resources for LGBT, Interfaith Families</a> </h3>--}}
+                                                {{--<div class="entry-meta inline-content greylinks"> <span>--}}
+													{{--<i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-single-right.html">--}}
+														{{--<time datetime="2017-10-03T08:50:40+00:00">--}}
+														{{--17 jan, 2018</time>--}}
+													{{--</a>--}}
+												{{--</span> <span>--}}
+													{{--<i class="fa fa-user highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-right.html">Admin</a>--}}
+												{{--</span> <span class="categories-links">--}}
+													{{--<i class="fa fa-tags highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-right.html">Services</a>--}}
+												{{--</span> </div>--}}
+                                            {{--</header>--}}
+                                            {{--<div class="entry-content md-content-3lines-ellipsis">--}}
+                                                {{--<p>Qui laboris ut, duis excepteur fatback boudin nostrud esse ea pork chop cupidatat cupim. Picanh landjaeger buffalo consequat jerky brisket, cupim ribeye magna beef occaecat. Venison salami pancetta t-bone ut, exercitation aliqua.</p>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
+                        {{--<article class="post format-small-image topmargin_30 to_animate" data-animation="fadeInRight">--}}
+                            {{--<div class="side-item side-md content-padding big-padding with_border bottom_color_border left">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-md-5 col-lg-4">--}}
+                                        {{--<div class="item-media entry-thumbnail"> <img src="{{ asset('/') }}front/images/gallery/09.jpg" alt=""> </div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-7 col-lg-8">--}}
+                                        {{--<div class="item-content">--}}
+                                            {{--<header class="entry-header">--}}
+                                                {{--<h3 class="entry-title small"> <a href="blog-single-right.html" rel="bookmark">Transgender 101. America With You</a> </h3>--}}
+                                                {{--<div class="entry-meta inline-content greylinks"> <span>--}}
+													{{--<i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-single-right.html">--}}
+														{{--<time datetime="2017-10-03T08:50:40+00:00">--}}
+														{{--17 jan, 2018</time>--}}
+													{{--</a>--}}
+												{{--</span> <span>--}}
+													{{--<i class="fa fa-user highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-right.html">Admin</a>--}}
+												{{--</span> <span class="categories-links">--}}
+													{{--<i class="fa fa-tags highlight rightpadding_5" aria-hidden="true"></i>--}}
+													{{--<a href="blog-right.html">Transgender</a>--}}
+												{{--</span> </div>--}}
+                                            {{--</header>--}}
+                                            {{--<div class="entry-content md-content-3lines-ellipsis">--}}
+                                                {{--<p>Nostrud ham hock fatback aute tri-tip sausage doner mollit quis laboris. Jerky meatball cupim filet mignon. Prosciutto rump eu fatback andouille eiusmod strip steak. Fugiat shoulder salami chuck in mollit. Minim nulla beef ribs adipisicing.--}}
+                                                {{--</p>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</article>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 @endsection
 

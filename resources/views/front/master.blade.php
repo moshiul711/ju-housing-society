@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <title>Diversify</title>
+    <title>Jahangirnagar Co-Operative Housing Society</title>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,11 +69,11 @@
                                     <li> <a href="{{ route('forms') }}">Forms</a></li>
                                     
                                     <li>
-                                        <a href="#">Notice</a>
-                                        <ul>
-                                            <li> <a href="">News</a></li>
-                                            <li> <a href="gallery-fullwidth.html">Events</a></li>
-                                        </ul>
+                                        <a href="{{ route('notice') }}">Notice</a>
+                                        {{--<ul>--}}
+                                            {{--<li> <a href="">News</a></li>--}}
+                                            {{--<li> <a href="gallery-fullwidth.html">Events</a></li>--}}
+                                        {{--</ul>--}}
                                     </li>
 
                                     <li>

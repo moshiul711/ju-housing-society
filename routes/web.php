@@ -9,6 +9,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\CommitteeController;
+use App\Http\Controllers\NoticeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,7 @@ Route::get('/contact',[FrontController::class,'contact'])->name('contact');
 Route::get('/about',[FrontController::class,'about'])->name('about');
 Route::get('/photo',[FrontController::class,'photo'])->name('photo');
 Route::get('/forms',[FrontController::class,'forms'])->name('forms');
+Route::get('/notice',[FrontController::class,'notice'])->name('notice');
 Route::get('/committee',[FrontController::class,'committee'])->name('committee');
 Route::get('/services',[FrontController::class,'services'])->name('services');
 
@@ -89,6 +91,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/about/manage',[AboutController::class,'index'])->name('about.manage');
     Route::get('/about/edit/{id}',[AboutController::class,'editAbout'])->name('about.edit');
     Route::post('/about/update/{id}',[AboutController::class,'updateAbout'])->name('about.update');
+
+
+
+    Route::get('/notice/create',[NoticeController::class,'createNotice'])->name('notice.create');
+    Route::post('/notice/store',[NoticeController::class,'storeNotice'])->name('notice.store');
 
     Route::get('/category/create',[ServiceController::class,'createCategory'])->name('category.create');
     Route::post('/category/store',[ServiceController::class,'storeCategory'])->name('category.store');

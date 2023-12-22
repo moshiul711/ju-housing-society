@@ -85,7 +85,7 @@
                                     <li> <a href="{{ route('forms') }}">Forms</a></li>
 
                                     <li>
-                                        <a href="#">Notice Board</a>
+                                        <a href="{{ route('notice') }}">Notice Board</a>
                                         {{--<ul>--}}
                                             {{--<li> <a href="">News</a></li>--}}
                                             {{--<li> <a href="gallery-fullwidth.html">Events</a></li>--}}
